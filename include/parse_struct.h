@@ -1,49 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   parse_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 14:35:58 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 18:36:57 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/03 18:38:16 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
+#ifndef PARSE_STRUCT_H
+# define PARSE_STRUCT_H
 
-/*
-**	System headers
-*/
-# include <stdio.h>
-# include <errno.h>
-# include <fcntl.h>
+enum	e_parse_error
+{
+	ERROR_AC = 1,
+	ERROR_AV,
+	ERROR_FILE_NOT_EXIST,
+	ERROR_MAL,
+};
 
-/*
-**	User define headers
-*/
-# include "../libft/libft.h"
-# include "parse_struct.h"
+typedef struct t_texture
+{
+	char	*texture_e;
+	char	*texture_w;
+	char	*texture_s;
+	char	*texture_n;
+}t_texture;
 
-/*
-**	Check
-*/
-void	check_main_arg(int ac, char **av);
-
-/*
-**	Struct
-*/
-void	malloc_info(t_map_info **info);
-
-/*
-**	Free
-*/
-void	free_map(t_map_info *info);
-
-/*
-**	Error
-*/
-void	error_print(int ec);
+typedef struct t_map_info
+{
+	char				*wspace;
+	struct t_texture	*texture;
+}t_map_info;
 
 #endif
