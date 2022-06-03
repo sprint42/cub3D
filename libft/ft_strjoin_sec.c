@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin_sec.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:33:50 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 19:44:19 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/03 20:44:11 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/03 20:44:17 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
+#include "libft.h"
 
-static void	free_map_element(t_map_info *info)
+char	*ft_strjoin_sec(char *s1, char const *s2)
 {
-	if (info && info->wspace)
-		free_info_wspace(info->wspace);
-	if (info && info->texture)
-		free_info_texture(info->texture);
-}
+	char	*str;
+	int		f_idx;
+	int		s_idx;
 
-void	free_map(t_map_info *info)
-{
-	if (info)
+	if (!s1)
+		s1 = ft_strdup("");
+	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	f_idx = 0;
+	while (s1[f_idx])
 	{
-		free_map_element(info);
-		free(info);
-		info = NULL;
+		str[f_idx] = s1[f_idx];
+		f_idx++;
 	}
+	s_idx = 0;
+	while (s2[s_idx])
+		str[f_idx++] = s2[s_idx++];
+	str[f_idx] = '\0';
+	free(s1);
+	return (str);
 }

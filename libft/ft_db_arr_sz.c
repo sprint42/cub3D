@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   ft_db_arr_sz.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:33:50 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 19:44:19 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/03 21:42:02 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/03 21:44:26 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
+#include "libft.h"
 
-static void	free_map_element(t_map_info *info)
+size_t	ft_db_arr_sz(char **s)
 {
-	if (info && info->wspace)
-		free_info_wspace(info->wspace);
-	if (info && info->texture)
-		free_info_texture(info->texture);
-}
+	char	**cp;
 
-void	free_map(t_map_info *info)
-{
-	if (info)
-	{
-		free_map_element(info);
-		free(info);
-		info = NULL;
-	}
+	if (!s)
+		return (0);
+	cp = s;
+	while (*cp)
+		cp++;
+	return (cp - s);
 }

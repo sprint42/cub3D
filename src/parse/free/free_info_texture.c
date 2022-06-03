@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   free_info_texture.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:33:50 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 19:44:19 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/03 19:36:44 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/03 20:41:49 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-static void	free_map_element(t_map_info *info)
+void	free_info_texture(t_texture *texture)
 {
-	if (info && info->wspace)
-		free_info_wspace(info->wspace);
-	if (info && info->texture)
-		free_info_texture(info->texture);
-}
-
-void	free_map(t_map_info *info)
-{
-	if (info)
-	{
-		free_map_element(info);
-		free(info);
-		info = NULL;
-	}
+	free(texture->texture_e);
+	free(texture->texture_w);
+	free(texture->texture_s);
+	free(texture->texture_n);
+	texture->texture_e = NULL;
+	texture->texture_w = NULL;
+	texture->texture_s = NULL;
+	texture->texture_n = NULL;
+	free(texture);
+	texture = NULL;
 }

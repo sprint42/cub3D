@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 22:31:43 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 15:44:17 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/03 21:43:30 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 char	**ft_split(char const *s, char c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strjoin_sec(char *s1, char const *s2);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strjoin_leak(char const *s1, char const *s2);
@@ -63,9 +64,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
+size_t	ft_db_arr_sz(char **s);
+size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(const char *s);
 
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);

@@ -6,7 +6,7 @@
 #    By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 14:16:54 by mcha              #+#    #+#              #
-#    Updated: 2022/06/03 18:37:49 by mcha             ###   ########.fr        #
+#    Updated: 2022/06/03 20:50:05 by mcha             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 ##																		##
 ##########################################################################
 CC			= gcc
-CFLAGS		= -I $(HEAD_ROOT) -Wall -Werror -Wextra
+CFLAGS		= -I $(HEAD_ROOT) -Wall -Werror -Wextra -g#3 -fsanitize=address
 
 
 ##########################################################################
@@ -54,12 +54,16 @@ SRCS_P_ERRO	= $(PARS_ROOT)/error
 SRCS_P_CHEK	= $(PARS_ROOT)/check
 SRCS_P_STRT	= $(PARS_ROOT)/struct
 SRCS_P_FREE	= $(PARS_ROOT)/free
+SRCS_P_PROC	= $(PARS_ROOT)/proc
+SRCS_P_GETN	= $(PARS_ROOT)/gnl
 
 vpath %.c	$(SRCS_MAIN) \
 			$(SRCS_P_ERRO) \
 			$(SRCS_P_CHEK) \
 			$(SRCS_P_STRT) \
 			$(SRCS_P_FREE) \
+			$(SRCS_P_PROC) \
+			$(SRCS_P_GETN) \
 
 
 ##########################################################################
@@ -72,6 +76,8 @@ FILE_P_ERRO	= $(notdir $(wildcard $(SRCS_P_ERRO)/*.c))
 FILE_P_CHEK = $(notdir $(wildcard $(SRCS_P_CHEK)/*.c))
 FILE_P_STRT = $(notdir $(wildcard $(SRCS_P_STRT)/*.c))
 FILE_P_FREE = $(notdir $(wildcard $(SRCS_P_FREE)/*.c))
+FILE_P_PROC	= $(notdir $(wildcard $(SRCS_P_PROC)/*.c))
+FILE_P_GETN	= $(notdir $(wildcard $(SRCS_P_GETN)/*.c))
 
 
 
@@ -85,6 +91,8 @@ OBJ_P_ERRO	= $(FILE_P_ERRO:.c=.o)
 OBJ_P_CHEK	= $(FILE_P_CHEK:.c=.o)
 OBJ_P_STRT	= $(FILE_P_STRT:.c=.o)
 OBJ_P_FREE	= $(FILE_P_FREE:.c=.o)
+OBJ_P_PROC	= $(FILE_P_PROC:.c=.o)
+OBJ_P_GETN	= $(FILE_P_GETN:.c=.o)
 
 
 
@@ -93,7 +101,7 @@ OBJ_P_FREE	= $(FILE_P_FREE:.c=.o)
 ##							Integrated object File						##
 ##																		##
 ##########################################################################
-OBJ_PARSE	:= $(OBJ_P_ERRO) $(OBJ_P_CHEK) $(OBJ_P_STRT) $(OBJ_P_FREE)
+OBJ_PARSE	:= $(OBJ_P_ERRO) $(OBJ_P_CHEK) $(OBJ_P_STRT) $(OBJ_P_FREE) $(OBJ_P_PROC) $(OBJ_P_GETN)
 OBJ 		:= $(OBJ_MAIN) $(OBJ_PARSE)
 OBJ 		:= $(addprefix $(OBJS_ROOT)/, $(OBJ))
 

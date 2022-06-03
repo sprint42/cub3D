@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 18:38:16 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/03 20:06:14 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct t_texture
 
 typedef struct t_map_info
 {
+	int					r;
+	int					c;
 	char				*wspace;
 	struct t_texture	*texture;
 }t_map_info;

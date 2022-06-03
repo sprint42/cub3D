@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   is_texture.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:33:50 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 19:44:19 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/03 21:15:31 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/03 21:46:15 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-static void	free_map_element(t_map_info *info)
+static int	is_texture_syntax(t_map_info *info, char *buf)
 {
-	if (info && info->wspace)
-		free_info_wspace(info->wspace);
-	if (info && info->texture)
-		free_info_texture(info->texture);
+	char	*tmp;
+	char	**res;
+
+	tmp = ft_strtrim(buf, info->wspace);
+	printf("tmp: %s\n", tmp);
+	res = ft_split(tmp, ' ');
+	printf("arrsz : %zu\n", ft_db_arr_sz(res));
+	while (*res)
+	{
+		printf("res: %s\n", *res);
+		res++;
+	}
+	return (0);
 }
 
-void	free_map(t_map_info *info)
+int	is_texture(t_map_info *info, char *buf)
 {
-	if (info)
-	{
-		free_map_element(info);
-		free(info);
-		info = NULL;
-	}
+	is_texture_syntax(info, buf);
+	return (0);
 }

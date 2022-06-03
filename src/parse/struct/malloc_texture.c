@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   malloc_texture.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:33:50 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 19:44:19 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/03 18:52:48 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/03 19:43:07 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-static void	free_map_element(t_map_info *info)
+void	malloc_texture(t_map_info **info)
 {
-	if (info && info->wspace)
-		free_info_wspace(info->wspace);
-	if (info && info->texture)
-		free_info_texture(info->texture);
-}
-
-void	free_map(t_map_info *info)
-{
-	if (info)
+	(*info)->texture = (t_texture *)malloc(sizeof(t_texture));
+	if (!((*info)->texture))
 	{
-		free_map_element(info);
-		free(info);
-		info = NULL;
+		error_print(ERROR_MAL);
+		exit(EXIT_FAILURE);
 	}
+	(*info)->texture->texture_e = NULL;
+	(*info)->texture->texture_w = NULL;
+	(*info)->texture->texture_s = NULL;
+	(*info)->texture->texture_n = NULL;
 }

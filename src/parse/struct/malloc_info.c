@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:10:59 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 18:37:11 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/03 21:11:09 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,16 @@ static void	get_wspace(t_map_info *info)
 	{
 		error_print(ERROR_MAL);
 		free(info);
+		exit(EXIT_FAILURE);
 	}
+}
+
+static void	bind_info_value(t_map_info *info)
+{
+	info->r = 0;
+	info->c = 0;
+	info->wspace = NULL;
+	info->texture = NULL;
 }
 
 void	malloc_info(t_map_info **info)
@@ -47,6 +56,7 @@ void	malloc_info(t_map_info **info)
 		error_print(ERROR_MAL);
 		exit(EXIT_FAILURE);
 	}
+	bind_info_value(*info);
 	get_wspace(*info);
-	(*info)->texture = NULL;
+	malloc_texture(info);
 }
