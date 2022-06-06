@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_texture.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:15:31 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 16:24:33 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 23:20:15 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ static int	is_texture_syntax(t_map_info *info, char *buf)
 	if (ft_db_arr_sz(res) == 2 && is_texture_type(res[0]))
 	{
 		free_db_arr(res);
+		free(tmp);
 		return (1);
 	}
 	free_db_arr(res);
+	free(tmp);
 	return (0);
 }
 

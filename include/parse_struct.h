@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 16:07:20 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 22:41:39 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ enum	e_flag
 	TEXTR_DONE = 1 << 2,
 	COLOR_PROC = 1 << 3,
 	COLOR_DONE = 1 << 4,
+};
+
+enum	e_texture_type
+{
+	EA = 1,
+	WE,
+	SO,
+	NO
 };
 
 typedef struct t_texture

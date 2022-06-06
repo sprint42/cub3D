@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/chaminjae/Desktop/42/cursus/cub3d'
+make: `cub3D' is up to date.
+make: Leaving directory `/Users/chaminjae/Desktop/42/cursus/cub3d'
+ 

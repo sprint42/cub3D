@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:58 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 16:23:51 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 23:19:18 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 **	Check
 */
 void	check_main_arg(int ac, char **av);
+int		is_color(t_map_info *info, char *buf);
 int		is_texture(t_map_info *info, char *buf);
 void	check_texture_and_color(t_map_info *info);
 
