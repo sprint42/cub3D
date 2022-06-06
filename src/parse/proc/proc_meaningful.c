@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:09:39 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 21:28:31 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 16:21:02 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	proc_meaningful(t_map_info *info, char *buf)
 {
 	if (is_texture(info, buf))
-		;
+		bind_texture(info, buf);
 }

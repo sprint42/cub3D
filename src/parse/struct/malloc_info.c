@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:10:59 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 21:11:09 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 15:47:27 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static void	bind_info_value(t_map_info *info)
 {
 	info->r = 0;
 	info->c = 0;
+	info->flag = 0;
 	info->wspace = NULL;
 	info->texture = NULL;
 }

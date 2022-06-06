@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:52:29 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 21:10:32 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 16:27:08 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,16 @@ static void	read_file(t_map_info *info, int fd)
 	close(fd);
 }
 
+/*
+**	Entrance after pass first exception check
+*/
+
 void	proc_map(t_map_info *info, char *file_name)
 {
 	int	fd;
 
 	fd = open(file_name, O_RDONLY, 0644);
 	read_file(info, fd);
+	printf("\n");
+	check_texture_and_color(info);
 }

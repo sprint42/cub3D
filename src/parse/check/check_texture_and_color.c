@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_texture_and_color.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 14:35:47 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 14:57:39 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/06 16:05:27 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/06 16:26:23 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-int	main(int ac, char **av)
+void	check_texture_and_color(t_map_info *info)
 {
-	t_map_info	*map_info;
-
-	map_info = NULL;
-	check_main_arg(ac, av);
-	malloc_info(&map_info);
-	proc_map(map_info, av[1]);
-	free_map(map_info);
-	return (1);
+	if (!(info->texture->texture_e) || \
+		!(info->texture->texture_n) || \
+		!(info->texture->texture_w) || \
+		!(info->texture->texture_s))
+	{
+		// printf("???\n");
+		error_print(ERROR_COMP_NOT_FOUND);
+		exit(EXIT_FAILURE);
+	}
 }

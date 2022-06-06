@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:34:06 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 19:43:50 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 15:42:53 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	is_map_not_exist(char **av)
 	int		fd;
 
 	tmp = av[1];
-	fd = open(tmp, O_RDWR, 0644);
+	fd = open(tmp, O_RDONLY, 0644);
 	if (fd < 0)
 	{
 		error_print(ERROR_FILE_NOT_EXIST);

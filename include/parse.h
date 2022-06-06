@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:58 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 21:28:53 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 16:23:51 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,18 @@
 */
 void	check_main_arg(int ac, char **av);
 int		is_texture(t_map_info *info, char *buf);
+void	check_texture_and_color(t_map_info *info);
 
 /*
 **	Proc
 */
 void	proc_map(t_map_info *info, char *file_name);
 void	proc_meaningful(t_map_info *info, char *buf);
+
+/*
+**	Bind
+*/
+void	bind_texture(t_map_info *info, char *buf);
 
 /*
 **	Struct
@@ -47,6 +53,7 @@ void	malloc_texture(t_map_info **info);
 /*
 **	Free
 */
+void	free_db_arr(char **arr);
 void	free_map(t_map_info *info);
 void	free_info_wspace(char *wspace);
 void	free_info_texture(t_texture *texture);

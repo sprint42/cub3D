@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:44:19 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 18:16:30 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 16:11:30 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,10 @@ void	error_print(int ec)
 	{
 		errno = 12;
 		perror("Error\nmessage: memory allocate failed	");
+	}
+	else if (ec == ERROR_COMP_NOT_FOUND)
+	{
+		errno = 22;
+		perror("Error\nmessage: cannot found parse component	");
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/03 20:06:14 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/06 16:07:20 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@ enum	e_parse_error
 	ERROR_AV,
 	ERROR_FILE_NOT_EXIST,
 	ERROR_MAL,
+	ERROR_COMP_NOT_FOUND,
+};
+
+enum	e_flag
+{
+	TEXTR_PROC = 1 << 1,
+	TEXTR_DONE = 1 << 2,
+	COLOR_PROC = 1 << 3,
+	COLOR_DONE = 1 << 4,
 };
 
 typedef struct t_texture
@@ -33,6 +42,7 @@ typedef struct t_map_info
 {
 	int					r;
 	int					c;
+	int					flag;
 	char				*wspace;
 	struct t_texture	*texture;
 }t_map_info;
