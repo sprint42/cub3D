@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 16:41:33 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 22:30:50 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ enum	e_parse_error
 	ERROR_EMPTY_N_OCCURED,
 	ERROR_MAP_PARSE_END,
 	ERROR_COMP_AFTER_END,
+	ERROR_INVALID_MAP_CHAR,
+	ERROR_PLAYER_SPAWN_CNT,
+	ERROR_MAP_NOT_EXIST,
 };
 
 /*
@@ -51,6 +54,12 @@ enum	e_color_type
 {
 	F,
 	C
+};
+
+enum	e_checker_type
+{
+	UD,
+	LR
 };
 
 typedef struct t_texture
@@ -79,6 +88,7 @@ typedef struct t_map_info
 	int					c;
 	int					flag;
 	char				*wspace;
+	char				*valid;
 	struct t_texture	*texture;
 	struct t_color		*color;
 	char				**map;

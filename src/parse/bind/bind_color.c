@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:01:48 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 15:31:24 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 22:39:15 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,11 @@ static void	dup_color_value(t_map_info *info, char **arr)
 	{
 		check_color_null(info, F);
 		bind_color_value(info, arr[1], F);
-		printf("Bind color. type: %s	value: %s\n", "F", arr[1]);
 	}	
 	else if (!ft_strncmp(arr[0], "C", ft_strlen(arr[0])))
 	{
 		check_color_null(info, C);
 		bind_color_value(info, arr[1], C);
-		printf("Bind color. type: %s	value: %s\n", "C", arr[1]);
 	}
 }
 

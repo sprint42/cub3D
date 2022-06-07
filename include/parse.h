@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:58 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 17:53:41 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 21:53:40 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,17 @@
 int		is_color(char *buf);
 int		is_color_value_nbr(char **arr);
 void	check_main_arg(int ac, char **av);
-int		check_map_valid(t_map_info *info);
+void	check_map_valid_pre(t_map_info *info);
+void	check_map_valid_after(t_map_info *info);
 int		is_texture(t_map_info *info, char *buf);
+void	check_player_spawn_cnt(t_map_info *info);
 void	check_texture_and_color(t_map_info *info);
 int		check_component_all_bind(t_map_info *info);
 
 /*
 **	Proc
 */
+void	proc_map_manufact(t_map_info *info);
 void	proc_map(t_map_info *info, char *file_name);
 void	proc_meaningful(t_map_info *info, char *buf);
 

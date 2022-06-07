@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:05:27 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 17:46:38 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 22:49:23 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,5 @@ void	check_texture_and_color(t_map_info *info)
 	{
 		error_print(ERROR_COMP_NOT_FOUND);
 		exit(EXIT_FAILURE);
-	}
-	else if (check_component_all_bind(info))
-	{
-		printf("\n==================================================\n");
-		printf("==						==\n");
-		printf("==	All components is successfully binded	==\n");
-		printf("==						==\n");
-		printf("==================================================\n");
 	}
 }

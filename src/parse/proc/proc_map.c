@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:52:29 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 17:53:14 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 22:49:11 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,6 @@ static void	judge(t_map_info *info, char *buf)
 	free(tmp);
 }
 
-/*
-**	Garbage function
-*/
-static void	print_map(t_map_info *info)
-{
-	char	**ptr;
-
-	ptr = info->map;
-	printf("\n	<< Map start >>\n");
-	while (*ptr)
-	{
-		printf("%s\n", *ptr);
-		ptr++;
-	}
-	printf("	<< Map end >>\n");
-}
-
 static void	read_file(t_map_info *info, int fd)
 {
 	char	*buf;
@@ -74,9 +57,8 @@ static void	read_file(t_map_info *info, int fd)
 			info->flag |= COMP_BIND_DONE;
 		free(buf);
 	}
-	print_map(info);
 	close(fd);
-	check_map_valid(info);
+	check_map_valid_pre(info);
 }
 
 /*
@@ -89,5 +71,7 @@ void	proc_map(t_map_info *info, char *file_name)
 
 	fd = open(file_name, O_RDONLY, 0644);
 	read_file(info, fd);
+	proc_map_manufact(info);
+	check_map_valid_after(info);
 	check_texture_and_color(info);
 }

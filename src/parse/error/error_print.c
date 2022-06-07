@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:44:19 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 16:32:31 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 22:32:17 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ static void	set_errno(int ec)
 			ec == ERROR_NOT_APPROP || \
 			ec == ERROR_EMPTY_OCCURED || \
 			ec == ERROR_EMPTY_N_OCCURED || \
-			ec == ERROR_COMP_AFTER_END)
+			ec == ERROR_COMP_AFTER_END || \
+			ec == ERROR_INVALID_MAP_CHAR || \
+			ec == ERROR_PLAYER_SPAWN_CNT || \
+			ec == ERROR_MAP_NOT_EXIST)
 		errno = 22;
 }
 
@@ -44,12 +47,16 @@ void	error_print(int ec)
 		perror("Error\nmessage: component is already binded	");
 	else if (ec == ERROR_NOT_APPROP)
 		perror("Error\nmessage: not appropriate component	");
-	else if (ec == ERROR_EMPTY_OCCURED)
+	else if (ec == ERROR_EMPTY_OCCURED || ec == ERROR_MAP_NOT_EXIST)
 		perror("Error\nmessage: empty line occured	");
 	else if (ec == ERROR_MAP_PARSE_END)
 		perror("Error\nmessage: map parse end	");
 	else if (ec == ERROR_EMPTY_N_OCCURED)
 		perror("Error\nmessage: empty line not occured	");
 	else if (ec == ERROR_COMP_AFTER_END)
-		perror("Error\nmesesage: something here after map end	");
+		perror("Error\nmeesage: something here after map end	");
+	else if (ec == ERROR_INVALID_MAP_CHAR)
+		perror("Error\nmessage: invalid map character	");
+	else if (ec == ERROR_PLAYER_SPAWN_CNT)
+		perror("Error\nmessage: player spawn area is more than 1	");
 }
