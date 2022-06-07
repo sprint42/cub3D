@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:58 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 23:19:18 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 17:53:41 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,13 @@
 /*
 **	Check
 */
+int		is_color(char *buf);
+int		is_color_value_nbr(char **arr);
 void	check_main_arg(int ac, char **av);
-int		is_color(t_map_info *info, char *buf);
+int		check_map_valid(t_map_info *info);
 int		is_texture(t_map_info *info, char *buf);
 void	check_texture_and_color(t_map_info *info);
+int		check_component_all_bind(t_map_info *info);
 
 /*
 **	Proc
@@ -43,12 +46,16 @@ void	proc_meaningful(t_map_info *info, char *buf);
 /*
 **	Bind
 */
+void	bind_map(t_map_info *info, char *buf);
+void	bind_color(t_map_info *info, char *buf);
 void	bind_texture(t_map_info *info, char *buf);
+void	bind_color_value(t_map_info *info, char *value, int type);
 
 /*
 **	Struct
 */
 void	malloc_info(t_map_info **info);
+void	malloc_color(t_map_info **info);
 void	malloc_texture(t_map_info **info);
 
 /*

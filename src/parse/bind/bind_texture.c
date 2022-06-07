@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bind_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:19:45 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 23:15:58 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 15:32:09 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@ static void	check_texture_null(t_map_info *info, int type)
 {
 	if (type == EA && info->texture->texture_e)
 	{
-		error_print(ERROR_COMP_NOT_FOUND);
+		error_print(ERROR_ALREADY_BIND);
 		exit(EXIT_FAILURE);
 	}
 	else if (type == WE && info->texture->texture_w)
 	{
-		error_print(ERROR_COMP_NOT_FOUND);
+		error_print(ERROR_ALREADY_BIND);
 		exit(EXIT_FAILURE);
 	}
 	else if (type == SO && info->texture->texture_s)
 	{
-		error_print(ERROR_COMP_NOT_FOUND);
+		error_print(ERROR_ALREADY_BIND);
 		exit(EXIT_FAILURE);
 	}
 	else if (type == NO && info->texture->texture_n)
 	{
-		error_print(ERROR_COMP_NOT_FOUND);
+		error_print(ERROR_ALREADY_BIND);
 		exit(EXIT_FAILURE);
 	}
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   malloc_texture.c                                   :+:      :+:    :+:   */
+/*   check_map_valid.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:52:48 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 13:44:11 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/07 17:51:55 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/07 18:02:11 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-void	malloc_texture(t_map_info **info)
+int	check_map_valid(t_map_info *info)
 {
-	(*info)->texture = (t_texture *)malloc(sizeof(t_texture));
-	if (!((*info)->texture))
+	char	**ptr;
+
+	ptr = info->map;
+	while (*ptr)
 	{
-		error_print(ERROR_MAL);
-		exit(EXIT_FAILURE);
+		printf("%s\n", *ptr);
+		ptr++;
 	}
-	(*info)->texture->texture_e = NULL;
-	(*info)->texture->texture_w = NULL;
-	(*info)->texture->texture_s = NULL;
-	(*info)->texture->texture_n = NULL;
+	return (1);
 }

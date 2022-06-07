@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 22:41:39 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 16:41:33 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,23 @@ enum	e_parse_error
 	ERROR_FILE_NOT_EXIST,
 	ERROR_MAL,
 	ERROR_COMP_NOT_FOUND,
+	ERROR_ALREADY_BIND,
+	ERROR_NOT_APPROP,
+	ERROR_EMPTY_OCCURED,
+	ERROR_EMPTY_N_OCCURED,
+	ERROR_MAP_PARSE_END,
+	ERROR_COMP_AFTER_END,
 };
 
+/*
+**	need refact
+*/
 enum	e_flag
 {
-	TEXTR_PROC = 1 << 1,
-	TEXTR_DONE = 1 << 2,
-	COLOR_PROC = 1 << 3,
-	COLOR_DONE = 1 << 4,
+	COMP_BIND_DONE = 1 << 1,
+	CHECK_BEFORE_MAP = 1 << 2,
+	START_MAP_PARSE = 1 << 3,
+	END_MAP_PARSE = 1 << 4,
 };
 
 enum	e_texture_type
@@ -38,6 +47,12 @@ enum	e_texture_type
 	NO
 };
 
+enum	e_color_type
+{
+	F,
+	C
+};
+
 typedef struct t_texture
 {
 	char	*texture_e;
@@ -46,6 +61,18 @@ typedef struct t_texture
 	char	*texture_n;
 }t_texture;
 
+typedef struct t_color
+{
+	unsigned int	f_r;
+	unsigned int	f_g;
+	unsigned int	f_b;
+	unsigned int	c_r;
+	unsigned int	c_g;
+	unsigned int	c_b;
+	unsigned int	f_check;
+	unsigned int	c_check;
+}t_color;
+
 typedef struct t_map_info
 {
 	int					r;
@@ -53,6 +80,8 @@ typedef struct t_map_info
 	int					flag;
 	char				*wspace;
 	struct t_texture	*texture;
+	struct t_color		*color;
+	char				**map;
 }t_map_info;
 
 #endif

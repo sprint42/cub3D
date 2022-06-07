@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:44:19 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 23:18:06 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 16:32:31 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ static void	set_errno(int ec)
 		errno = 2;
 	else if (ec == ERROR_MAL)
 		errno = 12;
-	else if (ec == ERROR_COMP_NOT_FOUND)
+	else if (ec == ERROR_COMP_NOT_FOUND || \
+			ec == ERROR_ALREADY_BIND || \
+			ec == ERROR_NOT_APPROP || \
+			ec == ERROR_EMPTY_OCCURED || \
+			ec == ERROR_EMPTY_N_OCCURED || \
+			ec == ERROR_COMP_AFTER_END)
 		errno = 22;
 }
 
@@ -35,4 +40,16 @@ void	error_print(int ec)
 		perror("Error\nmessage: memory allocate failed	");
 	else if (ec == ERROR_COMP_NOT_FOUND)
 		perror("Error\nmessage: cannot found parse component	");
+	else if (ec == ERROR_ALREADY_BIND)
+		perror("Error\nmessage: component is already binded	");
+	else if (ec == ERROR_NOT_APPROP)
+		perror("Error\nmessage: not appropriate component	");
+	else if (ec == ERROR_EMPTY_OCCURED)
+		perror("Error\nmessage: empty line occured	");
+	else if (ec == ERROR_MAP_PARSE_END)
+		perror("Error\nmessage: map parse end	");
+	else if (ec == ERROR_EMPTY_N_OCCURED)
+		perror("Error\nmessage: empty line not occured	");
+	else if (ec == ERROR_COMP_AFTER_END)
+		perror("Error\nmesesage: something here after map end	");
 }

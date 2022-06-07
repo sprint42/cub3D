@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:10:59 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/06 15:47:27 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/07 16:45:13 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ static void	bind_info_value(t_map_info *info)
 	info->flag = 0;
 	info->wspace = NULL;
 	info->texture = NULL;
+	info->color = NULL;
+	info->map = NULL;
 }
 
 void	malloc_info(t_map_info **info)
@@ -60,4 +62,5 @@ void	malloc_info(t_map_info **info)
 	bind_info_value(*info);
 	get_wspace(*info);
 	malloc_texture(info);
+	malloc_color(info);
 }
