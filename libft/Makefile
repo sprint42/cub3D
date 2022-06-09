@@ -6,7 +6,7 @@
 #    By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/18 00:16:13 by mcha              #+#    #+#              #
-#    Updated: 2022/06/03 15:50:57 by mcha             ###   ########.fr        #
+#    Updated: 2022/06/03 21:45:19 by mcha             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS	= ft_isalpha.c \
 			ft_substr.c \
 			ft_strjoin.c \
 			ft_strjoin_leak.c \
+			ft_strjoin_sec.c \
 			ft_strtrim.c \
 			ft_split.c \
 			ft_itoa.c \
@@ -51,7 +52,8 @@ SRCS	= ft_isalpha.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c
+			ft_putnbr_fd.c \
+			ft_db_arr_sz.c \
 
 BONUS_SRCS	= ft_lstnew.c \
 				ft_lstadd_front.c \

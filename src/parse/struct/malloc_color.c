@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   malloc_color.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 14:35:47 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 16:23:12 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/07 13:42:22 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/07 15:08:04 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
-#include "minilib.h"
 
-int	main(int ac, char **av)
+void	malloc_color(t_map_info **info)
 {
-	t_map_info	*map_info;
-
-	map_info = NULL;
-	check_main_arg(ac, av);
-	malloc_info(&map_info);
-	proc_map(&map_info, av[1]);
-	proc_mlx(&map_info);
-	free_map(&map_info);
-	return (1);
+	(*info)->color = (t_color *)malloc(sizeof(t_color));
+	if (!((*info)->color))
+	{
+		error_print(ERROR_MAL);
+		exit(EXIT_FAILURE);
+	}
+	(*info)->color->f_r = 0;
+	(*info)->color->f_g = 0;
+	(*info)->color->f_b = 0;
+	(*info)->color->c_r = 0;
+	(*info)->color->c_g = 0;
+	(*info)->color->c_b = 0;
+	(*info)->color->c_check = 0;
+	(*info)->color->f_check = 0;
 }

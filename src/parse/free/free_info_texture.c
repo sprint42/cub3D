@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_info_texture.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 14:35:47 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 16:23:12 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/03 19:36:44 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/03 20:41:49 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
-#include "minilib.h"
 
-int	main(int ac, char **av)
+void	free_info_texture(t_texture *texture)
 {
-	t_map_info	*map_info;
-
-	map_info = NULL;
-	check_main_arg(ac, av);
-	malloc_info(&map_info);
-	proc_map(&map_info, av[1]);
-	proc_mlx(&map_info);
-	free_map(&map_info);
-	return (1);
+	free(texture->texture_e);
+	free(texture->texture_w);
+	free(texture->texture_s);
+	free(texture->texture_n);
+	texture->texture_e = NULL;
+	texture->texture_w = NULL;
+	texture->texture_s = NULL;
+	texture->texture_n = NULL;
+	free(texture);
+	texture = NULL;
 }

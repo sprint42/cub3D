@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_db_arr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 14:35:47 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 16:23:12 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/06 16:21:39 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/07 16:57:41 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
-#include "minilib.h"
 
-int	main(int ac, char **av)
+void	free_db_arr(char **arr)
 {
-	t_map_info	*map_info;
+	size_t	sz;
+	size_t	idx;
 
-	map_info = NULL;
-	check_main_arg(ac, av);
-	malloc_info(&map_info);
-	proc_map(&map_info, av[1]);
-	proc_mlx(&map_info);
-	free_map(&map_info);
-	return (1);
+	idx = 0;
+	sz = ft_db_arr_sz(arr);
+	while (idx < sz)
+	{
+		free(arr[idx]);
+		idx++;
+	}
+	free(arr);
+	arr = NULL;
 }

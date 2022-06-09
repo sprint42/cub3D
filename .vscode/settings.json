@@ -1,0 +1,8 @@
+{
+  "makefile.extensionOutputFolder": "./.vscode",
+"C_Cpp.errorSquiggles": "Disabled",
+"files.associations": {
+	"parse_struct.h": "c",
+	"minilib.h": "c"
+}
+}

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   malloc_texture.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 14:35:47 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 16:23:12 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/03 18:52:48 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/07 13:44:11 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
-#include "minilib.h"
 
-int	main(int ac, char **av)
+void	malloc_texture(t_map_info **info)
 {
-	t_map_info	*map_info;
-
-	map_info = NULL;
-	check_main_arg(ac, av);
-	malloc_info(&map_info);
-	proc_map(&map_info, av[1]);
-	proc_mlx(&map_info);
-	free_map(&map_info);
-	return (1);
+	(*info)->texture = (t_texture *)malloc(sizeof(t_texture));
+	if (!((*info)->texture))
+	{
+		error_print(ERROR_MAL);
+		exit(EXIT_FAILURE);
+	}
+	(*info)->texture->texture_e = NULL;
+	(*info)->texture->texture_w = NULL;
+	(*info)->texture->texture_s = NULL;
+	(*info)->texture->texture_n = NULL;
 }
