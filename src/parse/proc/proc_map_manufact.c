@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   proc_map_manufact.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 20:01:11 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/08 18:07:31 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/09 16:48:05 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static int	get_row_col(t_map_info **info)
 	ret = 0;
 	while (*ptr)
 	{
-		if ((*info)->c < (int)ft_strlen(*ptr))
-			(*info)->c = ft_strlen(*ptr);
+		if ((*info)->width < (int)ft_strlen(*ptr))
+			(*info)->width = ft_strlen(*ptr);
 		ret++;
 		ptr++;
 	}
@@ -35,10 +35,10 @@ static char	**init_man_arr(t_map_info **info)
 	int		idx;
 
 	idx = 0;
-	arr = (char **)malloc(sizeof(char *) * ((*info)->r + 1));
-	while (idx < (*info)->r)
+	arr = (char **)malloc(sizeof(char *) * ((*info)->height + 1));
+	while (idx < (*info)->height)
 	{
-		arr[idx] = ft_calloc((*info)->c + 1, sizeof(char));
+		arr[idx] = ft_calloc((*info)->width + 1, sizeof(char));
 		idx++;
 	}
 	arr[idx] = 0;
@@ -51,15 +51,15 @@ static void	copy_map(t_map_info **info, char **arr)
 	int	c;
 
 	r = 0;
-	while (r < (*info)->r)
+	while (r < (*info)->height)
 	{
 		c = 0;
-		while (c < (*info)->c && (*info)->map[r][c])
+		while (c < (*info)->width && (*info)->map[r][c])
 		{
 			arr[r][c] = (*info)->map[r][c];
 			c++;
 		}
-		while (c < (*info)->c)
+		while (c < (*info)->width)
 		{
 			arr[r][c] = ' ';
 			c++;
@@ -74,7 +74,7 @@ void	proc_map_manufact(t_map_info **info)
 {
 	char	**tmp;
 
-	(*info)->r = get_row_col(info);
+	(*info)->height = get_row_col(info);
 	tmp = init_man_arr(info);
 	copy_map(info, tmp);
 	free_db_arr((*info)->map);

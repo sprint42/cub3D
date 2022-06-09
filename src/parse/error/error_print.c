@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:44:19 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 22:32:17 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/09 18:13:34 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ static void	set_errno(int ec)
 			ec == ERROR_COMP_AFTER_END || \
 			ec == ERROR_INVALID_MAP_CHAR || \
 			ec == ERROR_PLAYER_SPAWN_CNT || \
-			ec == ERROR_MAP_NOT_EXIST)
+			ec == ERROR_MAP_NOT_EXIST || \
+			ec == ERROR_XPM || \
+			ec == ERROR_MLX_INIT || \
+			ec == ERROR_BIND_FAIL)
 		errno = 22;
 }
 
-void	error_print(int ec)
+void	error_set_1(int ec)
 {
-	set_errno(ec);
 	if (ec == ERROR_AC || ec == ERROR_AV)
 		perror("Error\nusage: ./cub3D [MAPFILE].cub	");
 	else if (ec == ERROR_FILE_NOT_EXIST)
@@ -59,4 +61,27 @@ void	error_print(int ec)
 		perror("Error\nmessage: invalid map character	");
 	else if (ec == ERROR_PLAYER_SPAWN_CNT)
 		perror("Error\nmessage: player spawn area is more than 1	");
+}
+
+void	error_set_2(int ec)
+{
+	if (ec == ERROR_XPM)
+		perror("Error\nmessage: invalid xpm file	");
+	else if (ec == ERROR_MLX_INIT)
+		perror("Error\nmessage: mlx initialize failed	");
+	else if (ec == ERROR_BIND_FAIL)
+		perror("Error\nmessage: image bind failed	");
+}
+
+void	error_print(int ec)
+{
+	set_errno(ec);
+	error_set_1(ec);
+	error_set_2(ec);
+}
+
+void	err_exit(int ec)
+{
+	error_print(ec);
+	exit(EXIT_FAILURE);
 }

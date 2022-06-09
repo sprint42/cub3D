@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/08 17:49:51 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/09 19:41:41 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ enum	e_parse_error
 	ERROR_INVALID_MAP_CHAR,
 	ERROR_PLAYER_SPAWN_CNT,
 	ERROR_MAP_NOT_EXIST,
+	ERROR_XPM,
+	ERROR_MLX_INIT,
+	ERROR_BIND_FAIL,
 };
 
 /*
@@ -82,25 +85,45 @@ typedef struct t_color
 	unsigned int	c_check;
 }t_color;
 
-typedef struct t_map_comp
+typedef struct t_map_ptr
 {
-	void	*comp_e;
-	void	*comp_w;
-	void	*comp_s;
-	void	*comp_n;
-}t_map_comp;
+	void	*ptr_e;
+	void	*ptr_w;
+	void	*ptr_s;
+	void	*ptr_n;
+}t_map_ptr;
+
+typedef struct t_texture_info
+{
+	void	*ptr;
+	char	*addr;
+	int		bpp;
+	int		size_line;
+	int		endian;
+}t_texture_info;
+
+typedef struct t_comp
+{
+	struct t_texture_info	*info_e;
+	struct t_texture_info	*info_w;
+	struct t_texture_info	*info_s;
+	struct t_texture_info	*info_n;
+}t_comp;
 
 typedef struct t_map_info
 {
-	int					r;
-	int					c;
+	int					width;
+	int					height;
 	int					flag;
 	char				*wspace;
 	char				*valid;
 	struct t_texture	*texture;
 	struct t_color		*color;
-	struct t_map_comp	*comp;
+	struct t_map_ptr	*ptr;
+	struct t_comp		*comp;
 	char				**map;
+	void				*mlx_ptr;
+	void				*win_ptr;
 }t_map_info;
 
 #endif

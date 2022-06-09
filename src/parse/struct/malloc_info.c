@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   malloc_info.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:10:59 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/08 18:11:20 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/09 18:25:49 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,18 @@ static void	get_valid(t_map_info **info)
 
 static void	bind_info_value(t_map_info **info)
 {
-	(*info)->r = 0;
-	(*info)->c = 0;
+	(*info)->width = 0;
+	(*info)->height = 0;
 	(*info)->flag = 0;
 	(*info)->wspace = NULL;
 	(*info)->valid = NULL;
 	(*info)->texture = NULL;
 	(*info)->color = NULL;
+	(*info)->ptr = NULL;
+	(*info)->comp = NULL;
 	(*info)->map = NULL;
+	(*info)->mlx_ptr = NULL;
+	(*info)->win_ptr = NULL;
 }
 
 void	malloc_info(t_map_info **info)
@@ -84,5 +88,6 @@ void	malloc_info(t_map_info **info)
 	get_valid(info);
 	malloc_texture(info);
 	malloc_color(info);
+	malloc_ptr(info);
 	malloc_comp(info);
 }

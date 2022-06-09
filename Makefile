@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+         #
+#    By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 14:16:54 by mcha              #+#    #+#              #
-#    Updated: 2022/06/08 17:59:00 by mcha             ###   ########.fr        #
+#    Updated: 2022/06/09 16:19:51 by mcha             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ LIBF_ROOT	= libft
 HEAD_ROOT	= include
 MLIB_ROOT	= minilibx_opengl
 PARS_ROOT	= $(SRCS_ROOT)/parse
+LIBM_ROOT	= $(SRCS_ROOT)/mlx
 
 
 ##########################################################################
@@ -50,6 +51,7 @@ PARS_ROOT	= $(SRCS_ROOT)/parse
 ##					* Add Directory path at vpath						##
 ##					* _P_ = Parse										##
 ##					* _E_ = Execute										##
+##					* _M_ = Mlx											##
 ##																		##
 ##########################################################################
 SRCS_MAIN	= $(SRCS_ROOT)/main
@@ -60,6 +62,10 @@ SRCS_P_FREE	= $(PARS_ROOT)/free
 SRCS_P_PROC	= $(PARS_ROOT)/proc
 SRCS_P_GETN	= $(PARS_ROOT)/gnl
 SRCS_P_BIND	= $(PARS_ROOT)/bind
+SRCS_M_PROC	= $(LIBM_ROOT)/proc
+SRCS_M_CHEK	= $(LIBM_ROOT)/check
+SRCS_M_BIND	= $(LIBM_ROOT)/bind
+SRCS_M_FREE	= $(LIBM_ROOT)/free
 
 vpath %.c	$(SRCS_MAIN) \
 			$(SRCS_P_ERRO) \
@@ -69,6 +75,10 @@ vpath %.c	$(SRCS_MAIN) \
 			$(SRCS_P_PROC) \
 			$(SRCS_P_GETN) \
 			$(SRCS_P_BIND) \
+			$(SRCS_M_PROC) \
+			$(SRCS_M_CHEK) \
+			$(SRCS_M_BIND) \
+			$(SRCS_M_FREE) \
 
 
 ##########################################################################
@@ -84,7 +94,10 @@ FILE_P_FREE = $(notdir $(wildcard $(SRCS_P_FREE)/*.c))
 FILE_P_PROC	= $(notdir $(wildcard $(SRCS_P_PROC)/*.c))
 FILE_P_GETN	= $(notdir $(wildcard $(SRCS_P_GETN)/*.c))
 FILE_P_BIND	= $(notdir $(wildcard $(SRCS_P_BIND)/*.c))
-
+FILE_M_PROC = $(notdir $(wildcard $(SRCS_M_PROC)/*.c))
+FILE_M_CHEK = $(notdir $(wildcard $(SRCS_M_CHEK)/*.c))
+FILE_M_BIND	= $(notdir $(wildcard $(SRCS_M_BIND)/*.c))
+FILE_M_FREE	= $(notdir $(wildcard $(SRCS_M_FREE)/*.c))
 
 
 ##########################################################################
@@ -100,7 +113,10 @@ OBJ_P_FREE	= $(FILE_P_FREE:.c=.o)
 OBJ_P_PROC	= $(FILE_P_PROC:.c=.o)
 OBJ_P_GETN	= $(FILE_P_GETN:.c=.o)
 OBJ_P_BIND	= $(FILE_P_BIND:.c=.o)
-
+OBJ_M_PROC	= $(FILE_M_PROC:.c=.o)
+OBJ_M_CHEK	= $(FILE_M_CHEK:.c=.o)
+OBJ_M_BIND	= $(FILE_M_BIND:.c=.o)
+OBJ_M_FREE	= $(FILE_M_FREE:.c=.o)
 
 
 ##########################################################################
@@ -109,7 +125,8 @@ OBJ_P_BIND	= $(FILE_P_BIND:.c=.o)
 ##																		##
 ##########################################################################
 OBJ_PARSE	:= $(OBJ_P_ERRO) $(OBJ_P_CHEK) $(OBJ_P_STRT) $(OBJ_P_FREE) $(OBJ_P_PROC) $(OBJ_P_GETN) $(OBJ_P_BIND)
-OBJ 		:= $(OBJ_MAIN) $(OBJ_PARSE)
+OBJ_MLX		:= $(OBJ_M_PROC) $(OBJ_M_CHEK) $(OBJ_M_BIND) $(OBJ_M_FREE)
+OBJ 		:= $(OBJ_MAIN) $(OBJ_PARSE) $(OBJ_MLX)
 OBJ 		:= $(addprefix $(OBJS_ROOT)/, $(OBJ))
 
 

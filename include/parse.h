@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:58 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/08 18:11:45 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/09 18:50:24 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	bind_color_value(t_map_info **info, char *value, int type);
 /*
 **	Struct
 */
+void	malloc_ptr(t_map_info **info);
 void	malloc_info(t_map_info **info);
 void	malloc_comp(t_map_info **info);
 void	malloc_color(t_map_info **info);
@@ -74,6 +75,7 @@ void	free_info_texture(t_texture *texture);
 /*
 **	Error
 */
+void	err_exit(int ec);
 void	error_print(int ec);
 
 /*

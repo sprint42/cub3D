@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_valid_after.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:34:55 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 11:45:07 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/09 16:41:40 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	judge_valid_space(t_map_info **info, int r, int c)
 		error_print(ERROR_INVALID_MAP_CHAR);
 		exit(EXIT_FAILURE);
 	}
-	if (r < (*info)->r - 1 && ((*info)->map[r + 1][c] != ' ' && \
+	if (r < (*info)->height - 1 && ((*info)->map[r + 1][c] != ' ' && \
 	(*info)->map[r + 1][c] != '1'))
 	{
 		error_print(ERROR_INVALID_MAP_CHAR);
@@ -32,7 +32,7 @@ static void	judge_valid_space(t_map_info **info, int r, int c)
 		error_print(ERROR_INVALID_MAP_CHAR);
 		exit(EXIT_FAILURE);
 	}
-	if (c < (*info)->c - 1 && ((*info)->map[r][c + 1] != ' ' && \
+	if (c < (*info)->width - 1 && ((*info)->map[r][c + 1] != ' ' && \
 	(*info)->map[r][c + 1] != '1'))
 	{
 		error_print(ERROR_INVALID_MAP_CHAR);
@@ -48,10 +48,10 @@ void	check_map_inner(t_map_info **info)
 
 	r = 0;
 	arr = (*info)->map;
-	while (r < (*info)->r)
+	while (r < (*info)->height)
 	{
 		c = 0;
-		while (c < (*info)->c)
+		while (c < (*info)->width)
 		{
 			if (arr[r][c] == ' ')
 				judge_valid_space(info, r, c);
@@ -68,7 +68,7 @@ static void	check_outer(t_map_info **info, int type, int r)
 	c = 0;
 	if (type == UD)
 	{
-		while (c < (*info)->c)
+		while (c < (*info)->width)
 		{
 			if ((*info)->map[r][c] != ' ' && (*info)->map[r][c] != '1')
 			{
@@ -81,8 +81,8 @@ static void	check_outer(t_map_info **info, int type, int r)
 	else if (type == LR)
 	{
 		if (((*info)->map[r][0] != ' ' && (*info)->map[r][0] != '1') || \
-			((*info)->map[r][(*info)->c - 1] != ' ' && \
-			(*info)->map[r][(*info)->c - 1] != '1'))
+			((*info)->map[r][(*info)->width - 1] != ' ' && \
+			(*info)->map[r][(*info)->width - 1] != '1'))
 		{
 			error_print(ERROR_INVALID_MAP_CHAR);
 			exit(EXIT_FAILURE);
@@ -95,9 +95,9 @@ void	check_map_outer(t_map_info **info)
 	int	r;
 
 	r = 0;
-	while (r < (*info)->r)
+	while (r < (*info)->height)
 	{
-		if (r == 0 || r == (*info)->r - 1)
+		if (r == 0 || r == (*info)->height - 1)
 			check_outer(info, UD, r);
 		else
 			check_outer(info, LR, r);
