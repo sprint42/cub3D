@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   bind_color.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:01:48 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 22:39:15 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/08 18:02:30 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-static void	check_color_null(t_map_info *info, int type)
+static void	check_color_null(t_map_info **info, int type)
 {
-	if (type == F && info->color->f_check)
+	if (type == F && (*info)->color->f_check)
 	{
 		error_print(ERROR_ALREADY_BIND);
 		exit(EXIT_FAILURE);
 	}
-	else if (type == C && info->color->c_check)
+	else if (type == C && (*info)->color->c_check)
 	{
 		error_print(ERROR_ALREADY_BIND);
 		exit(EXIT_FAILURE);
 	}
 }
 
-static void	dup_color_value(t_map_info *info, char **arr)
+static void	dup_color_value(t_map_info **info, char **arr)
 {
 	if (!ft_strncmp(arr[0], "F", ft_strlen(arr[0])))
 	{
@@ -40,7 +40,7 @@ static void	dup_color_value(t_map_info *info, char **arr)
 	}
 }
 
-void	bind_color(t_map_info *info, char *buf)
+void	bind_color(t_map_info **info, char *buf)
 {
 	char	**res;
 

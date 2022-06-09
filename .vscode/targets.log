@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Mon Jun  6 22:54:58 2022
+# Make data base, printed on Wed Jun  8 17:59:16 2022
 
 # Variables
 
@@ -15,19 +15,17 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# makefile (from `Makefile', line 110)
-OBJ := obj/main.o obj/error_print.o obj/check_main_arg.o obj/check_texture_and_color.o obj/is_texture.o obj/malloc_info.o obj/malloc_texture.o obj/free_db_arr.o obj/free_info_texture.o obj/free_info_wspace.o obj/free_map.o obj/proc_map.o obj/proc_meaningful.o obj/get_next_line.o obj/bind_texture.o
-# makefile (from `Makefile', line 92)
+# makefile (from `Makefile', line 113)
+OBJ := obj/main.o obj/error_print.o obj/check_main_arg.o obj/check_map_valid_after.o obj/check_map_valid_pre.o obj/check_player_spawn_cnt.o obj/check_texture_and_color.o obj/is_color.o obj/is_color_value_nbr.o obj/is_texture.o obj/malloc_color.o obj/malloc_comp.o obj/malloc_info.o obj/malloc_texture.o obj/free_db_arr.o obj/free_info_texture.o obj/free_info_wspace.o obj/free_map.o obj/proc_map.o obj/proc_map_manufact.o obj/proc_meaningful.o obj/get_next_line.o obj/bind_color.o obj/bind_color_value.o obj/bind_map.o obj/bind_texture.o
+# makefile (from `Makefile', line 95)
 OBJ_MAIN = $(FILE_MAIN:.c=.o)
-# makefile (from `Makefile', line 93)
+# makefile (from `Makefile', line 96)
 OBJ_P_ERRO = $(FILE_P_ERRO:.c=.o)
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# makefile (from `Makefile', line 99)
+# makefile (from `Makefile', line 102)
 OBJ_P_BIND = $(FILE_P_BIND:.c=.o)
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
@@ -37,55 +35,55 @@ OBJ_P_BIND = $(FILE_P_BIND:.c=.o)
 CURDIR := /Users/chaminjae/Desktop/42/cursus/cub3d
 # makefile
 SHELL = /bin/sh
-# makefile (from `Makefile', line 29)
+# makefile (from `Makefile', line 31)
 RM = rm -rf
 # environment
 VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{},"_languagePackSupport":true}
-# makefile (from `Makefile', line 40)
+# makefile (from `Makefile', line 42)
 HEAD_ROOT = include
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 19)
 CFLAGS = -I $(HEAD_ROOT) -Wall -Werror -Wextra -g
-# makefile (from `Makefile', line 39)
+# makefile (from `Makefile', line 41)
 LIBF_ROOT = libft
-# makefile (from `Makefile', line 76)
+# makefile (from `Makefile', line 79)
 FILE_MAIN = $(notdir $(wildcard $(SRCS_MAIN)/*.c))
-# makefile (from `Makefile', line 77)
+# makefile (from `Makefile', line 80)
 FILE_P_ERRO = $(notdir $(wildcard $(SRCS_P_ERRO)/*.c))
-# makefile (from `Makefile', line 108)
-OBJ_PARSE := error_print.o check_main_arg.o check_texture_and_color.o is_texture.o malloc_info.o malloc_texture.o free_db_arr.o free_info_texture.o free_info_wspace.o free_map.o proc_map.o proc_meaningful.o get_next_line.o bind_texture.o
-# makefile (from `Makefile', line 83)
+# makefile (from `Makefile', line 111)
+OBJ_PARSE := error_print.o check_main_arg.o check_map_valid_after.o check_map_valid_pre.o check_player_spawn_cnt.o check_texture_and_color.o is_color.o is_color_value_nbr.o is_texture.o malloc_color.o malloc_comp.o malloc_info.o malloc_texture.o free_db_arr.o free_info_texture.o free_info_wspace.o free_map.o proc_map.o proc_map_manufact.o proc_meaningful.o get_next_line.o bind_color.o bind_color_value.o bind_map.o bind_texture.o
+# makefile (from `Makefile', line 86)
 FILE_P_BIND = $(notdir $(wildcard $(SRCS_P_BIND)/*.c))
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
-# makefile (from `Makefile', line 95)
+# makefile (from `Makefile', line 98)
 OBJ_P_STRT = $(FILE_P_STRT:.c=.o)
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from `Makefile', line 38)
+# makefile (from `Makefile', line 40)
 SRCS_ROOT = src
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
-# makefile (from `Makefile', line 79)
+# makefile (from `Makefile', line 82)
 FILE_P_STRT = $(notdir $(wildcard $(SRCS_P_STRT)/*.c))
 # environment
 P9K_SSH = 0
-# makefile (from `Makefile', line 52)
+# makefile (from `Makefile', line 55)
 SRCS_MAIN = $(SRCS_ROOT)/main
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/1p/6kppthcs2r7dhwh8ngnvkz6r0000gn/T/vscode-ipc-dd30b4c3-8a1c-485e-827e-dae20f43b7a3.sock
-# makefile (from `Makefile', line 53)
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/1p/6kppthcs2r7dhwh8ngnvkz6r0000gn/T/vscode-ipc-740cc09e-823f-4157-be22-b14f918c5627.sock
+# makefile (from `Makefile', line 56)
 SRCS_P_ERRO = $(PARS_ROOT)/error
 # environment
-VSCODE_CWD = /Users/chaminjae/Desktop/42/cursus/cub3d
-# makefile (from `Makefile', line 59)
+VSCODE_CWD = /
+# makefile (from `Makefile', line 62)
 SRCS_P_BIND = $(PARS_ROOT)/bind
 # environment
 PATH = /Users/chaminjae/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin
-# makefile (from `Makefile', line 78)
+# makefile (from `Makefile', line 81)
 FILE_P_CHEK = $(notdir $(wildcard $(SRCS_P_CHEK)/*.c))
-# makefile (from `Makefile', line 55)
+# makefile (from `Makefile', line 58)
 SRCS_P_STRT = $(PARS_ROOT)/struct
 # environment
 VSCODE_LOG_STACK = false
@@ -93,15 +91,15 @@ VSCODE_LOG_STACK = false
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
-# makefile (from `Makefile', line 94)
+# makefile (from `Makefile', line 97)
 OBJ_P_CHEK = $(FILE_P_CHEK:.c=.o)
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.TYe06El4V0/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.qTNyFXWMKU/Listeners
 # automatic
 %F = $(notdir $%)
-# makefile (from `Makefile', line 54)
+# makefile (from `Makefile', line 57)
 SRCS_P_CHEK = $(PARS_ROOT)/check
-# makefile (from `Makefile', line 96)
+# makefile (from `Makefile', line 99)
 OBJ_P_FREE = $(FILE_P_FREE:.c=.o)
 # environment
 VSCODE_PIPE_LOGGING = true
@@ -109,18 +107,16 @@ VSCODE_PIPE_LOGGING = true
 PWD = /Users/chaminjae/Desktop/42/cursus/cub3d
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
-# makefile (from `Makefile', line 80)
+# makefile (from `Makefile', line 83)
 FILE_P_FREE = $(notdir $(wildcard $(SRCS_P_FREE)/*.c))
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/chaminjae
-# makefile (from `Makefile', line 97)
+# makefile (from `Makefile', line 100)
 OBJ_P_PROC = $(FILE_P_PROC:.c=.o)
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
-# environment
-VSCODE_CLI = 1
 # environment
 VSCODE_CODE_CACHE_PATH = /Users/chaminjae/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
@@ -131,23 +127,21 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# makefile (from `Makefile', line 81)
+# makefile (from `Makefile', line 84)
 FILE_P_PROC = $(notdir $(wildcard $(SRCS_P_PROC)/*.c))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
 # environment
-LC_TERMINAL = iTerm2
-# environment
-SHLVL = 3
-# makefile (from `Makefile', line 56)
+SHLVL = 1
+# makefile (from `Makefile', line 59)
 SRCS_P_FREE = $(PARS_ROOT)/free
-# makefile (from `Makefile', line 82)
+# makefile (from `Makefile', line 85)
 FILE_P_GETN = $(notdir $(wildcard $(SRCS_P_GETN)/*.c))
-# makefile (from `Makefile', line 28)
+# makefile (from `Makefile', line 29)
 LIBFT = libft/libft.a
 # makefile (from `Makefile', line 18)
 CC = gcc
@@ -157,22 +151,18 @@ MAKE_VERSION := 3.81
 USER = mcha
 # makefile
 .DEFAULT_GOAL := cub3D
-# default
-MAKECMDGOALS := all
-# environment
-TERM_SESSION_ID = w0t0p0:7BB09E4E-9CEB-42F7-AAE6-6FAE5F81ADB8
-# makefile (from `Makefile', line 27)
+# makefile (from `Makefile', line 28)
 NAME = cub3D
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# makefile (from `Makefile', line 98)
+# makefile (from `Makefile', line 101)
 OBJ_P_GETN = $(FILE_P_GETN:.c=.o)
-# makefile (from `Makefile', line 57)
+# makefile (from `Makefile', line 20)
+LFLAGS = -lmlx -framework OpenGL -framework AppKit
+# makefile (from `Makefile', line 60)
 SRCS_P_PROC = $(PARS_ROOT)/proc
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -188,21 +178,13 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.15
-# environment
 MAIL = mcha@student.42seoul.kr
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.11448947.11448953.D761140A-ECD8-4668-9B49-7D5422BE4471
-# environment
-LC_TERMINAL_VERSION = 3.4.15
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.11448947.11448953
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w0t0p0:7BB09E4E-9CEB-42F7-AAE6-6FAE5F81ADB8
-# environment
-COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x3:0x33
 # environment
@@ -211,19 +193,17 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# environment
-ITERM_PROFILE = Default
-# makefile (from `Makefile', line 58)
+# makefile (from `Makefile', line 61)
 SRCS_P_GETN = $(PARS_ROOT)/gnl
 # environment
 LC_ALL = C
-# environment
-P9K_TTY = old
+# makefile (from `Makefile', line 30)
+MLIBX = minilibx_opengl/libmlx.a
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# makefile (from `Makefile', line 37)
+# makefile (from `Makefile', line 39)
 OBJS_ROOT = obj
 # default
 .INCLUDE_DIRS = /usr/local/include
@@ -231,16 +211,14 @@ OBJS_ROOT = obj
 MAKELEVEL := 0
 # environment
 LANG = C
-# environment
-TERM = xterm-256color
-# environment
-_P9K_TTY = /dev/ttys001
-# makefile (from `Makefile', line 41)
+# makefile (from `Makefile', line 43)
+MLIB_ROOT = minilibx_opengl
+# makefile (from `Makefile', line 44)
 PARS_ROOT = $(SRCS_ROOT)/parse
 # environment
-VSCODE_PID = 79031
+VSCODE_PID = 14144
 # variable set hash-table stats:
-# Load=114/1024=11%, Rehash=0, Collisions=33/208=16%
+# Load=103/1024=10%, Rehash=0, Collisions=30/202=15%
 
 # Pattern-specific Variable Values
 
@@ -248,23 +226,23 @@ VSCODE_PID = 79031
 
 # Directories
 
-# . (device 16777223, inode 11823620): 13 files, no impossibilities.
-# src/parse/error (device 16777223, inode 11824040): 3 files, no impossibilities.
-# src/parse/free (device 16777223, inode 11824042): 6 files, no impossibilities.
-# src/main (device 16777223, inode 11823739): 3 files, no impossibilities.
-# src/parse/proc (device 16777223, inode 11824049): 4 files, no impossibilities.
-# src/parse/gnl (device 16777223, inode 11824047): 3 files, no impossibilities.
-# src/parse/bind (device 16777223, inode 11824034): 3 files, no impossibilities.
-# src/parse/struct (device 16777223, inode 11824052): 4 files, no impossibilities.
+# . (device 16777223, inode 11867158): 12 files, no impossibilities.
+# src/parse/error (device 16777223, inode 11867648): 3 files, no impossibilities.
+# src/parse/free (device 16777223, inode 11867650): 6 files, no impossibilities.
+# src/main (device 16777223, inode 11867276): 3 files, no impossibilities.
+# src/parse/proc (device 16777223, inode 11867657): 5 files, no impossibilities.
+# src/parse/gnl (device 16777223, inode 11867655): 3 files, no impossibilities.
+# src/parse/bind (device 16777223, inode 11867634): 6 files, no impossibilities.
+# src/parse/struct (device 16777223, inode 11867661): 6 files, no impossibilities.
  
-# src/parse/check (device 16777223, inode 11824036): 5 files, no impossibilities.
+# src/parse/check (device 16777223, inode 11867639): 10 files, no impossibilities.
 
-# 44 files, no impossibilities in 9 directories.
+# 54 files, no impossibilities in 9 directories.
 
 # Implicit Rules
 
 obj/%.o: %.c
-#  commands to execute (from `Makefile', line 114):
+#  commands to execute (from `Makefile', line 117):
 	@echo "[~] Linking $<"
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	
@@ -274,13 +252,16 @@ obj/%.o: %.c
 # Files
 
 # Not a target:
-src/parse/struct/malloc_info.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+obj/is_color.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/is_color_value_nbr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 all: cub3D
 #  Phony target (prerequisite of .PHONY).
@@ -288,68 +269,47 @@ all: cub3D
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-cub3D: obj/main.o obj/error_print.o obj/check_main_arg.o obj/check_texture_and_color.o obj/is_texture.o obj/malloc_info.o obj/malloc_texture.o obj/free_db_arr.o obj/free_info_texture.o obj/free_info_wspace.o obj/free_map.o obj/proc_map.o obj/proc_meaningful.o obj/get_next_line.o obj/bind_texture.o
+cub3D: obj/main.o obj/error_print.o obj/check_main_arg.o obj/check_map_valid_after.o obj/check_map_valid_pre.o obj/check_player_spawn_cnt.o obj/check_texture_and_color.o obj/is_color.o obj/is_color_value_nbr.o obj/is_texture.o obj/malloc_color.o obj/malloc_comp.o obj/malloc_info.o obj/malloc_texture.o obj/free_db_arr.o obj/free_info_texture.o obj/free_info_wspace.o obj/free_map.o obj/proc_map.o obj/proc_map_manufact.o obj/proc_meaningful.o obj/get_next_line.o obj/bind_color.o obj/bind_color_value.o obj/bind_map.o obj/bind_texture.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-06 22:54:50
+#  Last modified 2022-06-08 17:51:57
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 118):
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  commands to execute (from `Makefile', line 121):
 	@echo "[+] Create libft"
 	@make -s -C $(LIBF_ROOT)
+	@echo "[+] Create minilibx_opengl"
+	@make -s -C $(MLIB_ROOT)
 	@echo "[+] Create cub3D"
-	@$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBFT)
+	@$(CC) $(CFLAGS) $(LFLAGS) -o $@ $(OBJ) $(LIBFT) -L $(MLIB_ROOT)
 	
 
 # Not a target:
-src/parse/check/check_texture_and_color.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+obj/proc_map.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-obj/proc_map.o: src/parse/proc/proc_map.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `proc_map'
-#  Last modified 2022-06-06 22:54:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
-
-obj/get_next_line.o: src/parse/gnl/get_next_line.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `get_next_line'
-#  Last modified 2022-06-06 22:54:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
+# Not a target:
+obj/get_next_line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/main/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
+#  Last modified 2022-06-08 17:53:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -358,12 +318,12 @@ src/main/main.c:
 obj/check_main_arg.o: src/parse/check/check_main_arg.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `check_main_arg'
-#  Last modified 2022-06-06 22:54:45
+#  Last modified 2022-06-08 17:15:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
+#  commands to execute (from `Makefile', line 117):
 	@echo "[~] Linking $<"
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	
@@ -371,12 +331,12 @@ obj/check_main_arg.o: src/parse/check/check_main_arg.c
 obj/main.o: src/main/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2022-06-06 22:54:45
+#  Last modified 2022-06-08 17:59:04
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
+#  commands to execute (from `Makefile', line 117):
 	@echo "[~] Linking $<"
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	
@@ -388,137 +348,74 @@ obj/main.o: src/main/main.c
 #  File has not been updated.
 
 # Not a target:
-src/parse/check/is_texture.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:54:54
+#  Last modified 2022-06-08 17:59:00
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-src/parse/free/free_info_texture.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-obj/bind_texture.o: src/parse/bind/bind_texture.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `bind_texture'
-#  Last modified 2022-06-06 22:54:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
+obj/bind_texture.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/parse/free/free_map.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+obj/check_player_spawn_cnt.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/parse/error/error_print.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
+#  Last modified 2022-06-08 16:17:21
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-src/parse/free/free_info_wspace.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-src/parse/gnl/get_next_line.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+obj/malloc_comp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 136):
+#  commands to execute (from `Makefile', line 145):
 	@echo "[-] Delete run files"
 	@$(RM) $(NAME)
 	@echo "[-] Delete libft"
 	@make fclean -s -C $(LIBF_ROOT)
 	
 
-obj/free_db_arr.o: src/parse/free/free_db_arr.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `free_db_arr'
-#  Last modified 2022-06-06 22:54:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
-
-obj/malloc_texture.o: src/parse/struct/malloc_texture.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `malloc_texture'
-#  Last modified 2022-06-06 22:54:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
+# Not a target:
+obj/free_db_arr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/parse/struct/malloc_texture.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+obj/malloc_texture.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 obj/error_print.o: src/parse/error/error_print.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `error_print'
-#  Last modified 2022-06-06 22:54:45
+#  Last modified 2022-06-08 17:15:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
+#  commands to execute (from `Makefile', line 117):
 	@echo "[~] Linking $<"
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	
@@ -530,45 +427,60 @@ obj/error_print.o: src/parse/error/error_print.c
 #  File has not been updated.
 
 # Not a target:
-src/parse/proc/proc_meaningful.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
- 
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+obj/bind_color.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/parse/bind/bind_texture.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:53:17
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-obj/check_texture_and_color.o: src/parse/check/check_texture_and_color.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `check_texture_and_color'
-#  Last modified 2022-06-06 22:54:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
+obj/check_texture_and_color.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 142):
+#  commands to execute (from `Makefile', line 151):
 	make fclean
 	make all
+	
+
+# Not a target:
+obj/proc_map_manufact.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/check_map_valid_after.o: src/parse/check/check_map_valid_after.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `check_map_valid_after'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/check_map_valid_after.o
+# automatic
+# % := 
+# automatic
+# * := check_map_valid_after
+# automatic
+# + := src/parse/check/check_map_valid_after.c
+# automatic
+# | := 
+# automatic
+# < := src/parse/check/check_map_valid_after.c
+# automatic
+# ^ := src/parse/check/check_map_valid_after.c
+# automatic
+# ? := src/parse/check/check_map_valid_after.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  commands to execute (from `Makefile', line 117):
+	@echo "[~] Linking $<"
+	@$(CC) $(CFLAGS) -c -o $@ $<
 	
 
 clean:
@@ -576,119 +488,96 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 132):
+#  commands to execute (from `Makefile', line 137):
 	@$(RM) $(OBJ)
 	@echo "[-] Delete object files"
+	@make clean -s -C $(LIBF_ROOT)
+	@echo "[-] Delete libft object files"
+	@make clean -s -C $(MLIB_ROOT)
+	@echo "[-] Delete minilibx_opengl"
 	
 
-obj/is_texture.o: src/parse/check/is_texture.c
+# Not a target:
+src/parse/check/check_map_valid_after.c:
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `is_texture'
-#  Last modified 2022-06-06 22:54:45
+#  Last modified 2022-06-08 17:58:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
- 
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
+
+# Not a target:
+obj/is_texture.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/bind_map.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/parse/check/check_main_arg.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
+#  Last modified 2022-06-08 16:17:21
 #  File has been updated.
 #  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-obj/free_info_texture.o: src/parse/free/free_info_texture.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `free_info_texture'
-#  Last modified 2022-06-06 22:54:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
-
-obj/proc_meaningful.o: src/parse/proc/proc_meaningful.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `proc_meaningful'
-#  Last modified 2022-06-06 22:54:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
-
-obj/free_map.o: src/parse/free/free_map.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `free_map'
-#  Last modified 2022-06-06 22:54:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
-
-# Not a target:
-src/parse/free/free_db_arr.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:36:32
-#  File has been updated.
-#  Successfully updated.
+ 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-src/parse/proc/proc_map.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-06 22:51:11
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+obj/malloc_color.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-obj/free_info_wspace.o: src/parse/free/free_info_wspace.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `free_info_wspace'
-#  Last modified 2022-06-06 22:54:46
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
+# Not a target:
+obj/bind_color_value.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-obj/malloc_info.o: src/parse/struct/malloc_info.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `malloc_info'
-#  Last modified 2022-06-06 22:54:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 114):
-	@echo "[~] Linking $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
+# Not a target:
+obj/free_info_texture.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/proc_meaningful.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/free_map.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/check_map_valid_pre.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/free_info_wspace.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/malloc_info.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=39/1024=4%, Rehash=0, Collisions=9/312=3%
+# Load=39/1024=4%, Rehash=0, Collisions=8/130=6%
 # VPATH Search Paths
 
 vpath %.c src/main:src/parse/error:src/parse/check:src/parse/struct:src/parse/free:src/parse/proc:src/parse/gnl:src/parse/bind
@@ -702,6 +591,6 @@ vpath %.c src/main:src/parse/error:src/parse/check:src/parse/struct:src/parse/fr
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Jun  6 22:54:58 2022
+# Finished Make data base on Wed Jun  8 17:59:16 2022
 
  

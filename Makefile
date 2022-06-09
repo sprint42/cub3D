@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+         #
+#    By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 14:16:54 by mcha              #+#    #+#              #
-#    Updated: 2022/06/07 21:07:34 by mcha             ###   ########.fr        #
+#    Updated: 2022/06/08 17:59:00 by mcha             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@
 ##########################################################################
 CC			= gcc
 CFLAGS		= -I $(HEAD_ROOT) -Wall -Werror -Wextra -g#3 -fsanitize=address
+LFLAGS		= -lmlx -framework OpenGL -framework AppKit
 
 
 ##########################################################################
@@ -26,6 +27,7 @@ CFLAGS		= -I $(HEAD_ROOT) -Wall -Werror -Wextra -g#3 -fsanitize=address
 ##########################################################################
 NAME		= cub3D
 LIBFT		= libft/libft.a
+MLIBX		= minilibx_opengl/libmlx.a
 RM			= rm -rf
 
 
@@ -38,6 +40,7 @@ OBJS_ROOT	= obj
 SRCS_ROOT	= src
 LIBF_ROOT	= libft
 HEAD_ROOT	= include
+MLIB_ROOT	= minilibx_opengl
 PARS_ROOT	= $(SRCS_ROOT)/parse
 
 
@@ -117,8 +120,10 @@ $(OBJS_ROOT)/%.o : %.c
 $(NAME) : $(OBJ)
 	@echo "[+] Create libft"
 	@make -s -C $(LIBF_ROOT)
+	@echo "[+] Create minilibx_opengl"
+	@make -s -C $(MLIB_ROOT)
 	@echo "[+] Create cub3D"
-	@$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBFT)
+	@$(CC) $(CFLAGS) $(LFLAGS) -o $@ $(OBJ) $(LIBFT) -L $(MLIB_ROOT)
 
 
 ##########################################################################
@@ -131,6 +136,10 @@ all : $(NAME)
 clean :
 	@$(RM) $(OBJ)
 	@echo "[-] Delete object files"
+	@make clean -s -C $(LIBF_ROOT)
+	@echo "[-] Delete libft object files"
+	@make clean -s -C $(MLIB_ROOT)
+	@echo "[-] Delete minilibx_opengl"
 
 fclean : clean
 	@echo "[-] Delete run files"

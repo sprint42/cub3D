@@ -3,35 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   proc_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:52:29 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 22:49:11 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/09 11:45:08 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-static void	is_empty_before_map(t_map_info *info)
+static void	is_empty_before_map(t_map_info **info)
 {
-	if ((info->flag & COMP_BIND_DONE) && \
-		(info->flag & START_MAP_PARSE) && \
-		!(info->flag & END_MAP_PARSE))
-		info->flag |= END_MAP_PARSE;
-	else if ((info->flag & COMP_BIND_DONE) && !(info->flag & START_MAP_PARSE))
-		info->flag |= CHECK_BEFORE_MAP;
+	if (((*info)->flag & COMP_BIND_DONE) && \
+		((*info)->flag & START_MAP_PARSE) && \
+		!((*info)->flag & END_MAP_PARSE))
+		(*info)->flag |= END_MAP_PARSE;
+	else if (((*info)->flag & COMP_BIND_DONE) && \
+			!((*info)->flag & START_MAP_PARSE))
+		(*info)->flag |= CHECK_BEFORE_MAP;
 }
 
-static void	judge(t_map_info *info, char *buf)
+static void	judge(t_map_info **info, char *buf)
 {
 	char	*tmp;
 
-	tmp = ft_strtrim(buf, info->wspace);
+	tmp = ft_strtrim(buf, (*info)->wspace);
 	if (ft_strlen(tmp) != 0)
 	{
-		if (info->flag & COMP_BIND_DONE)
+		if ((*info)->flag & COMP_BIND_DONE)
 		{
-			if (!(info->flag & CHECK_BEFORE_MAP))
+			if (!((*info)->flag & CHECK_BEFORE_MAP))
 			{
 				error_print(ERROR_EMPTY_N_OCCURED);
 				exit(EXIT_FAILURE);
@@ -46,7 +47,7 @@ static void	judge(t_map_info *info, char *buf)
 	free(tmp);
 }
 
-static void	read_file(t_map_info *info, int fd)
+static void	read_file(t_map_info **info, int fd)
 {
 	char	*buf;
 
@@ -54,7 +55,7 @@ static void	read_file(t_map_info *info, int fd)
 	{
 		judge(info, buf);
 		if (check_component_all_bind(info))
-			info->flag |= COMP_BIND_DONE;
+			(*info)->flag |= COMP_BIND_DONE;
 		free(buf);
 	}
 	close(fd);
@@ -65,7 +66,7 @@ static void	read_file(t_map_info *info, int fd)
 **	Entrance after pass first exception check
 */
 
-void	proc_map(t_map_info *info, char *file_name)
+void	proc_map(t_map_info **info, char *file_name)
 {
 	int	fd;
 

@@ -1,46 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_player_spawn_cnt.c                           :+:      :+:    :+:   */
+/*   malloc_comp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 19:21:22 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/08 18:05:15 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/08 17:39:48 by mcha              #+#    #+#             */
+/*   Updated: 2022/06/08 17:44:17 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-static int	is_player_spawn(char *str)
+void	malloc_comp(t_map_info **info)
 {
-	int	cnt;
-
-	cnt = 0;
-	while (*str)
+	(*info)->comp = (t_map_comp *)malloc(sizeof(t_map_comp));
+	if (!((*info)->comp))
 	{
-		if (*str == 'N' || *str == 'S' || *str == 'E' || *str == 'W')
-			cnt++;
-		str++;
-	}
-	return (cnt);
-}
-
-void	check_player_spawn_cnt(t_map_info **info)
-{
-	char	**ptr;
-	int		cnt;
-
-	cnt = 0;
-	ptr = (*info)->map;
-	while (*ptr)
-	{
-		cnt += is_player_spawn(*ptr);
-		ptr++;
-	}	
-	if (cnt > 1 || cnt < 1)
-	{
-		error_print(ERROR_PLAYER_SPAWN_CNT);
+		error_print(ERROR_MAL);
 		exit(EXIT_FAILURE);
 	}
+	(*info)->comp->comp_e = NULL;
+	(*info)->comp->comp_w = NULL;
+	(*info)->comp->comp_s = NULL;
+	(*info)->comp->comp_n = NULL;
 }

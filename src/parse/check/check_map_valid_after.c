@@ -3,53 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_valid_after.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:34:55 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 22:41:57 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/09 11:45:07 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-static void	judge_valid_space(t_map_info *info, int r, int c)
+static void	judge_valid_space(t_map_info **info, int r, int c)
 {
-	if (r > 0 && (info->map[r - 1][c] != ' ' && info->map[r - 1][c] != '1'))
+	if (r > 0 && ((*info)->map[r - 1][c] != ' ' && \
+		(*info)->map[r - 1][c] != '1'))
 	{
 		error_print(ERROR_INVALID_MAP_CHAR);
 		exit(EXIT_FAILURE);
 	}
-	if (r < info->r - 1 && (info->map[r + 1][c] != ' ' && \
-	info->map[r + 1][c] != '1'))
+	if (r < (*info)->r - 1 && ((*info)->map[r + 1][c] != ' ' && \
+	(*info)->map[r + 1][c] != '1'))
 	{
 		error_print(ERROR_INVALID_MAP_CHAR);
 		exit(EXIT_FAILURE);
 	}
-	if (c > 0 && (info->map[r][c - 1] != ' ' && info->map[r][c - 1] != '1'))
+	if (c > 0 && ((*info)->map[r][c - 1] != ' ' && \
+		(*info)->map[r][c - 1] != '1'))
 	{
 		error_print(ERROR_INVALID_MAP_CHAR);
 		exit(EXIT_FAILURE);
 	}
-	if (c < info->c - 1 && (info->map[r][c + 1] != ' ' && \
-	info->map[r][c + 1] != '1'))
+	if (c < (*info)->c - 1 && ((*info)->map[r][c + 1] != ' ' && \
+	(*info)->map[r][c + 1] != '1'))
 	{
 		error_print(ERROR_INVALID_MAP_CHAR);
 		exit(EXIT_FAILURE);
 	}
 }
 
-void	check_map_inner(t_map_info *info)
+void	check_map_inner(t_map_info **info)
 {
 	char	**arr;
 	int		r;
 	int		c;
 
 	r = 0;
-	arr = info->map;
-	while (r < info->r)
+	arr = (*info)->map;
+	while (r < (*info)->r)
 	{
 		c = 0;
-		while (c < info->c)
+		while (c < (*info)->c)
 		{
 			if (arr[r][c] == ' ')
 				judge_valid_space(info, r, c);
@@ -59,16 +61,16 @@ void	check_map_inner(t_map_info *info)
 	}
 }
 
-static void	check_outer(t_map_info *info, int type, int r)
+static void	check_outer(t_map_info **info, int type, int r)
 {
 	int	c;
 
 	c = 0;
 	if (type == UD)
 	{
-		while (c < info->c)
+		while (c < (*info)->c)
 		{
-			if (info->map[r][c] != ' ' && info->map[r][c] != '1')
+			if ((*info)->map[r][c] != ' ' && (*info)->map[r][c] != '1')
 			{
 				error_print(ERROR_INVALID_MAP_CHAR);
 				exit(EXIT_FAILURE);
@@ -78,9 +80,9 @@ static void	check_outer(t_map_info *info, int type, int r)
 	}
 	else if (type == LR)
 	{
-		if ((info->map[r][0] != ' ' && info->map[r][0] != '1') || \
-			(info->map[r][info->c - 1] != ' ' && \
-			info->map[r][info->c - 1] != '1'))
+		if (((*info)->map[r][0] != ' ' && (*info)->map[r][0] != '1') || \
+			((*info)->map[r][(*info)->c - 1] != ' ' && \
+			(*info)->map[r][(*info)->c - 1] != '1'))
 		{
 			error_print(ERROR_INVALID_MAP_CHAR);
 			exit(EXIT_FAILURE);
@@ -88,14 +90,14 @@ static void	check_outer(t_map_info *info, int type, int r)
 	}
 }
 
-void	check_map_outer(t_map_info *info)
+void	check_map_outer(t_map_info **info)
 {
 	int	r;
 
 	r = 0;
-	while (r < info->r)
+	while (r < (*info)->r)
 	{
-		if (r == 0 || r == info->r - 1)
+		if (r == 0 || r == (*info)->r - 1)
 			check_outer(info, UD, r);
 		else
 			check_outer(info, LR, r);
@@ -103,7 +105,7 @@ void	check_map_outer(t_map_info *info)
 	}
 }
 
-void	check_map_valid_after(t_map_info *info)
+void	check_map_valid_after(t_map_info **info)
 {
 	check_map_outer(info);
 	check_map_inner(info);
