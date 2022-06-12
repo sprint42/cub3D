@@ -6,13 +6,14 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:09:57 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 00:46:14 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 01:09:44 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RAYCAST_H
 # define RAYCAST_H
 
+# include "math.h"
 # include "minilib.h"
 
 # define winW 4096
@@ -22,7 +23,7 @@
 
 typedef struct	s_ray
 {
-	double	camera_x;
+	double	camera_pos;
 	double	raydir_x;
 	double	raydir_y;
 	int		map_x;
@@ -31,6 +32,7 @@ typedef struct	s_ray
 	double	nextdist_y;
 	double	diststep_x;
 	double	diststep_y;
+	int		hit_side;
 	double	parallel_dist;
 	int		x_step_dir;
 	int		y_step_dir;
@@ -50,15 +52,14 @@ typedef struct s_draw
 
 /* INIT */
 
-// init_window.c
 void	init_window(t_map_info *map_info);
-
-// init_state.c
 void	init_state(t_map_info *map_info);
+void	init_ray(t_map_info *map_info, t_ray *ray);
 
-// play.c
+/* EVENT */
 void	play(t_map_info *map_info);
 
-// draw_sight.c
+/* DRAW */
+void	draw_sight(t_map_info *map_info);
 
 #endif
