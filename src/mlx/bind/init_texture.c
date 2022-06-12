@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:27:04 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/12 15:42:18 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 16:25:17 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,18 @@ void	init_texture(t_map_info **info)
 	int				x;
 	int				y;
 	t_map_ptr		*comp;
-	t_texture_path	*texture;
+	t_texture_path	*path;
 
 	comp = (*info)->ptr;
-	texture = (*info)->texture;
+	path = (*info)->path;
 	comp->ptr_e = \
-		mlx_xpm_file_to_image((*info)->mlx_ptr, texture->texture_e, &x, &y);
+		mlx_xpm_file_to_image((*info)->mlx_ptr, path->path_e, &x, &y);
 	comp->ptr_w = \
-		mlx_xpm_file_to_image((*info)->mlx_ptr, texture->texture_w, &x, &y);
+		mlx_xpm_file_to_image((*info)->mlx_ptr, path->path_w, &x, &y);
 	comp->ptr_s = \
-		mlx_xpm_file_to_image((*info)->mlx_ptr, texture->texture_s, &x, &y);
+		mlx_xpm_file_to_image((*info)->mlx_ptr, path->path_s, &x, &y);
 	comp->ptr_n = \
-		mlx_xpm_file_to_image((*info)->mlx_ptr, texture->texture_n, &x, &y);
+		mlx_xpm_file_to_image((*info)->mlx_ptr, path->path_n, &x, &y);
 	is_texture_bind_successfully(info);
 	link_texture_to_struct(info);
 }

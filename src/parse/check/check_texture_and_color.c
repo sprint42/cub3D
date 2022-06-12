@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:05:27 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/08 18:05:28 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 16:16:09 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 static int	check_component_not_bind(t_map_info **info)
 {
-	return (!((*info)->texture->texture_e) || \
-			!((*info)->texture->texture_n) || \
-			!((*info)->texture->texture_w) || \
-			!((*info)->texture->texture_s) || \
+	return (!((*info)->texture->comp_e) || \
+			!((*info)->texture->comp_n) || \
+			!((*info)->texture->comp_w) || \
+			!((*info)->texture->comp_s) || \
 			!((*info)->color->c_check) || \
 			!((*info)->color->f_check));
 }
 
 int	check_component_all_bind(t_map_info **info)
 {
-	return ((*info)->texture->texture_e && \
-			(*info)->texture->texture_n && \
-			(*info)->texture->texture_w && \
-			(*info)->texture->texture_s && \
+	return ((*info)->texture->comp_e && \
+			(*info)->texture->comp_n && \
+			(*info)->texture->comp_w && \
+			(*info)->texture->comp_s && \
 			(*info)->color->c_check && \
 			(*info)->color->f_check);
 }
