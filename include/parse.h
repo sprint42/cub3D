@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:58 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 18:50:24 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 15:39:45 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	malloc_texture(t_map_info **info);
 void	free_db_arr(char **arr);
 void	free_map(t_map_info **info);
 void	free_info_wspace(char *wspace);
-void	free_info_texture(t_texture *texture);
+void	free_info_texture(t_texture_path *texture);
 
 /*
 **	Error

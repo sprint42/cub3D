@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bind_cardinal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 19:23:49 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 19:49:28 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 15:44:27 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	bind_cardinal_east(t_map_info **info)
 {
-	t_texture_info	*pck;
+	t_comp	*pck;
 
 	pck = (*info)->comp->info_e;
 	pck->ptr = (*info)->ptr->ptr_e;
@@ -25,7 +25,7 @@ void	bind_cardinal_east(t_map_info **info)
 
 void	bind_cardinal_west(t_map_info **info)
 {
-	t_texture_info	*pck;
+	t_comp	*pck;
 
 	pck = (*info)->comp->info_w;
 	pck->ptr = (*info)->ptr->ptr_w;
@@ -36,7 +36,7 @@ void	bind_cardinal_west(t_map_info **info)
 
 void	bind_cardinal_south(t_map_info **info)
 {
-	t_texture_info	*pck;
+	t_comp	*pck;
 
 	pck = (*info)->comp->info_s;
 	pck->ptr = (*info)->ptr->ptr_s;
@@ -47,7 +47,7 @@ void	bind_cardinal_south(t_map_info **info)
 
 void	bind_cardinal_north(t_map_info **info)
 {
-	t_texture_info	*pck;
+	t_comp	*pck;
 
 	pck = (*info)->comp->info_n;
 	pck->ptr = (*info)->ptr->ptr_n;

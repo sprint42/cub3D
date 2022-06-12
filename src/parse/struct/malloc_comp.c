@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   malloc_comp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:08:16 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 18:44:33 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 15:43:53 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	bind_cardinal_points(t_map_info **info)
 
 void	malloc_comp(t_map_info **info)
 {
-	(*info)->comp = (t_comp *)malloc(sizeof(t_comp));
+	(*info)->comp = (t_texture *)malloc(sizeof(t_texture));
 	if (!(*info)->comp)
 	{
 		error_print(ERROR_MAL);

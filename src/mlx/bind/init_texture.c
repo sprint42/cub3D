@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:27:04 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 21:12:50 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 15:42:18 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static void	link_texture_to_struct(t_map_info **info)
 
 void	init_texture(t_map_info **info)
 {
-	int			x;
-	int			y;
-	t_map_ptr	*comp;
-	t_texture	*texture;
+	int				x;
+	int				y;
+	t_map_ptr		*comp;
+	t_texture_path	*texture;
 
 	comp = (*info)->ptr;
 	texture = (*info)->texture;
