@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:09:57 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 02:16:10 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 02:59:26 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include "math.h"
 # include "minilib.h"
 
-# define winW 4096
-# define winH 2048
+# define winW 1024
+# define winH 512
 # define texW 64
 # define texH 64
 # define SIDE_X 0
