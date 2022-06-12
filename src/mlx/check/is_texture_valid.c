@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_texture_valid.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 13:45:29 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/09 16:52:36 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 16:21:56 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,18 @@ static void	is_file_exist(char *filename)
 
 static void	check_cardinal_points(t_map_info **info)
 {
-	is_xpm_file((*info)->texture->texture_e);
-	is_xpm_file((*info)->texture->texture_w);
-	is_xpm_file((*info)->texture->texture_s);
-	is_xpm_file((*info)->texture->texture_n);
+	is_xpm_file((*info)->path->path_e);
+	is_xpm_file((*info)->path->path_w);
+	is_xpm_file((*info)->path->path_s);
+	is_xpm_file((*info)->path->path_n);
 }
 
 static void	check_is_file_exist(t_map_info **info)
 {
-	is_file_exist((*info)->texture->texture_e);
-	is_file_exist((*info)->texture->texture_w);
-	is_file_exist((*info)->texture->texture_s);
-	is_file_exist((*info)->texture->texture_n);
+	is_file_exist((*info)->path->path_e);
+	is_file_exist((*info)->path->path_w);
+	is_file_exist((*info)->path->path_s);
+	is_file_exist((*info)->path->path_n);
 }
 
 void	is_texture_valid(t_map_info **info)
