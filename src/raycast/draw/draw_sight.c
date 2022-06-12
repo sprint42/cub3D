@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:34:19 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 03:45:04 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 03:58:31 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,5 @@ void	draw_sight(t_map_info *map_info)
 		draw_vertical_line(map_info, i, draw_info);
 		i++;
 	}
+	mlx_put_image_to_window(map_info->mlx_ptr, map_info->win_ptr, map_info->state.img_buf.ptr, 0, 0);
 }
