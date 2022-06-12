@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:10:13 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 02:49:59 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 03:13:40 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	init_position(t_map_info *map_info, int (*i), int *j)
 		{
 			if (map_info->map[(*i)][(*j)] == 'N' || map_info->map[(*i)][(*j)] == 'S' || map_info->map[(*i)][(*j)] == 'W' || map_info->map[(*i)][(*j)] == 'E')
 			{
-				map_info->state.pos_x = texW * (*j);
-				map_info->state.pos_y = texH * (*i);
+				map_info->state.pos_x = (*j);
+				map_info->state.pos_y = (*i);
 				return ;
 			}
 			(*j)++;

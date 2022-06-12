@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 01:45:34 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 02:00:59 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 03:13:34 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	init_draw_texture(t_map_info *map_info, t_ray *ray, t_draw *draw_inf
 void	init_draw_info(t_map_info *map_info, t_ray *ray, t_draw *draw_info)
 {
 	t_state state;
-
+	
 	state = map_info->state;
 	if (ray->hit_side == SIDE_X)
 		ray->parallel_dist = (ray->map_x - state.pos_x + (1 - ray->step_x) / 2) / ray->raydir_x;
