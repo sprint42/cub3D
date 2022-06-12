@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 04:15:50 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 04:44:54 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 06:13:17 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ static void	move_to_north(t_map_info *map_info)
 	dy = state.dir_y / sqrtf(powf(state.dir_x, 2) + powf(state.dir_y, 2));
 	map_info->state.pos_x += dx * SPEED;
 	map_info->state.pos_y += dy * SPEED;
+	if (map_info->map[(int)map_info->state.pos_y][(int)map_info->state.pos_x] != '0' || \
+		map_info->map[(int)(map_info->state.pos_y - 0.5)][(int)map_info->state.pos_x] != '0')
+	{
+		map_info->state.pos_x -= dx * SPEED;
+		map_info->state.pos_y -= dy * SPEED;
+	}
 }
 
 static void	move_to_south(t_map_info *map_info)
@@ -36,6 +42,11 @@ static void	move_to_south(t_map_info *map_info)
 	dy = state.dir_y / sqrtf(powf(state.dir_x, 2) + powf(state.dir_y, 2));
 	map_info->state.pos_x -= dx * SPEED;
 	map_info->state.pos_y -= dy * SPEED;
+	if (map_info->map[(int)map_info->state.pos_y][(int)map_info->state.pos_x] != '0')
+	{
+		map_info->state.pos_x += dx * SPEED;
+		map_info->state.pos_y += dy * SPEED;
+	}
 }
 
 static void	move_to_west(t_map_info *map_info)
@@ -49,6 +60,12 @@ static void	move_to_west(t_map_info *map_info)
 	dy = -state.dir_x / sqrtf(powf(state.dir_x, 2) + powf(state.dir_y, 2));
 	map_info->state.pos_x += dx * SPEED;
 	map_info->state.pos_y += dy * SPEED;
+	if (map_info->map[(int)map_info->state.pos_y][(int)map_info->state.pos_x] != '0' || \
+		map_info->map[(int)map_info->state.pos_y][(int)(map_info->state.pos_x - 0.5)] != '0' )
+	{
+		map_info->state.pos_x -= dx * SPEED;
+		map_info->state.pos_y -= dy * SPEED;
+	}
 }
 
 static void	move_to_east(t_map_info *map_info)
@@ -62,6 +79,11 @@ static void	move_to_east(t_map_info *map_info)
 	dy = state.dir_x / sqrtf(powf(state.dir_x, 2) + powf(state.dir_y, 2));
 	map_info->state.pos_x += dx * SPEED;
 	map_info->state.pos_y += dy * SPEED;
+	if (map_info->map[(int)map_info->state.pos_y][(int)map_info->state.pos_x] != '0')
+	{
+		map_info->state.pos_x -= dx * SPEED;
+		map_info->state.pos_y -= dy * SPEED;
+	}
 }
 
 void	event_move(int key, t_map_info *map_info)
