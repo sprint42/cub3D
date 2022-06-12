@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   malloc_texture.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:52:48 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 13:44:11 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 15:40:48 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	malloc_texture(t_map_info **info)
 {
-	(*info)->texture = (t_texture *)malloc(sizeof(t_texture));
+	(*info)->texture = (t_texture_path *)malloc(sizeof(t_texture_path));
 	if (!((*info)->texture))
 	{
 		error_print(ERROR_MAL);
