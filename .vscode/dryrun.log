@@ -1,47 +1,78 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/chaminjae/Desktop/42/cursus/cub3d'
+echo "[~] Linking src/main/main.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/main.o src/main/main.c
+echo "[~] Linking src/parse/error/error_print.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/error_print.o src/parse/error/error_print.c
+echo "[~] Linking src/parse/check/check_main_arg.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/check_main_arg.o src/parse/check/check_main_arg.c
 echo "[~] Linking src/parse/check/check_map_valid_after.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/check_map_valid_after.o src/parse/check/check_map_valid_after.c
- 
 echo "[~] Linking src/parse/check/check_map_valid_pre.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/check_map_valid_pre.o src/parse/check/check_map_valid_pre.c
 echo "[~] Linking src/parse/check/check_player_spawn_cnt.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/check_player_spawn_cnt.o src/parse/check/check_player_spawn_cnt.c
 echo "[~] Linking src/parse/check/check_texture_and_color.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/check_texture_and_color.o src/parse/check/check_texture_and_color.c
+echo "[~] Linking src/parse/check/is_color.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/is_color.o src/parse/check/is_color.c
+echo "[~] Linking src/parse/check/is_color_value_nbr.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/is_color_value_nbr.o src/parse/check/is_color_value_nbr.c
 echo "[~] Linking src/parse/check/is_texture.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/is_texture.o src/parse/check/is_texture.c
- 
+echo "[~] Linking src/parse/struct/malloc_color.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/malloc_color.o src/parse/struct/malloc_color.c
+echo "[~] Linking src/parse/struct/malloc_comp.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/malloc_comp.o src/parse/struct/malloc_comp.c
 echo "[~] Linking src/parse/struct/malloc_info.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/malloc_info.o src/parse/struct/malloc_info.c
- 
+echo "[~] Linking src/parse/struct/malloc_ptr.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/malloc_ptr.o src/parse/struct/malloc_ptr.c
+echo "[~] Linking src/parse/struct/malloc_texture.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/malloc_texture.o src/parse/struct/malloc_texture.c
+echo "[~] Linking src/parse/free/free_db_arr.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/free_db_arr.o src/parse/free/free_db_arr.c
+echo "[~] Linking src/parse/free/free_info_texture.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/free_info_texture.o src/parse/free/free_info_texture.c
+echo "[~] Linking src/parse/free/free_info_wspace.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/free_info_wspace.o src/parse/free/free_info_wspace.c
 echo "[~] Linking src/parse/free/free_map.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/free_map.o src/parse/free/free_map.c
- 
 echo "[~] Linking src/parse/proc/proc_map.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/proc_map.o src/parse/proc/proc_map.c
 echo "[~] Linking src/parse/proc/proc_map_manufact.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/proc_map_manufact.o src/parse/proc/proc_map_manufact.c
- 
 echo "[~] Linking src/parse/proc/proc_meaningful.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/proc_meaningful.o src/parse/proc/proc_meaningful.c
- 
+echo "[~] Linking src/parse/gnl/get_next_line.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/get_next_line.o src/parse/gnl/get_next_line.c
 echo "[~] Linking src/parse/bind/bind_color.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/bind_color.o src/parse/bind/bind_color.c
- 
 echo "[~] Linking src/parse/bind/bind_color_value.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/bind_color_value.o src/parse/bind/bind_color_value.c
- 
 echo "[~] Linking src/parse/bind/bind_map.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/bind_map.o src/parse/bind/bind_map.c
 echo "[~] Linking src/parse/bind/bind_texture.c"
 gcc -I include -Wall -Werror -Wextra -g -c -o obj/bind_texture.o src/parse/bind/bind_texture.c
+echo "[~] Linking src/mlx/proc/proc_mlx.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/proc_mlx.o src/mlx/proc/proc_mlx.c
+echo "[~] Linking src/mlx/check/is_texture_valid.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/is_texture_valid.o src/mlx/check/is_texture_valid.c
+echo "[~] Linking src/mlx/bind/bind_cardinal.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/bind_cardinal.o src/mlx/bind/bind_cardinal.c
+echo "[~] Linking src/mlx/bind/init_cardinal.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/init_cardinal.o src/mlx/bind/init_cardinal.c
+echo "[~] Linking src/mlx/bind/init_mlx.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/init_mlx.o src/mlx/bind/init_mlx.c
+echo "[~] Linking src/mlx/bind/init_texture.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/init_texture.o src/mlx/bind/init_texture.c
+echo "[~] Linking src/mlx/free/destroy_texture.c"
+gcc -I include -Wall -Werror -Wextra -g -c -o obj/destroy_texture.o src/mlx/free/destroy_texture.c
 echo "[+] Create libft"
 make -s -C libft
 echo "[+] Create minilibx_opengl"
 make -s -C minilibx_opengl
 echo "[+] Create cub3D"
-gcc -I include -Wall -Werror -Wextra -g -lmlx -framework OpenGL -framework AppKit -o cub3D obj/main.o obj/error_print.o obj/check_main_arg.o obj/check_map_valid_after.o obj/check_map_valid_pre.o obj/check_player_spawn_cnt.o obj/check_texture_and_color.o obj/is_color.o obj/is_color_value_nbr.o obj/is_texture.o obj/malloc_color.o obj/malloc_comp.o obj/malloc_info.o obj/malloc_texture.o obj/free_db_arr.o obj/free_info_texture.o obj/free_info_wspace.o obj/free_map.o obj/proc_map.o obj/proc_map_manufact.o obj/proc_meaningful.o obj/get_next_line.o obj/bind_color.o obj/bind_color_value.o obj/bind_map.o obj/bind_texture.o libft/libft.a -L minilibx_opengl
- 
+gcc -I include -Wall -Werror -Wextra -g -lmlx -framework OpenGL -framework AppKit -o cub3D obj/main.o obj/error_print.o obj/check_main_arg.o obj/check_map_valid_after.o obj/check_map_valid_pre.o obj/check_player_spawn_cnt.o obj/check_texture_and_color.o obj/is_color.o obj/is_color_value_nbr.o obj/is_texture.o obj/malloc_color.o obj/malloc_comp.o obj/malloc_info.o obj/malloc_ptr.o obj/malloc_texture.o obj/free_db_arr.o obj/free_info_texture.o obj/free_info_wspace.o obj/free_map.o obj/proc_map.o obj/proc_map_manufact.o obj/proc_meaningful.o obj/get_next_line.o obj/bind_color.o obj/bind_color_value.o obj/bind_map.o obj/bind_texture.o obj/proc_mlx.o obj/is_texture_valid.o obj/bind_cardinal.o obj/init_cardinal.o obj/init_mlx.o obj/init_texture.o obj/destroy_texture.o libft/libft.a -L minilibx_opengl
 make: Leaving directory `/Users/chaminjae/Desktop/42/cursus/cub3d'
  
