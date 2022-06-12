@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:34:19 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 02:00:17 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 02:25:48 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	draw_sight(t_map_info *map_info)
 		init_ray(map_info, &ray);
 		find_hit_point(map_info, &ray);
 		init_draw_info(map_info, &ray, &draw_info);
-		// draw
+		draw_vertical_line(map_info, i, draw_info);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:09:57 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 01:46:08 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 02:16:10 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,7 @@ void	play(t_map_info *map_info);
 
 /* DRAW */
 void	draw_sight(t_map_info *map_info);
+void	draw_vertical_line(t_map_info *map_info, int win_x, t_draw draw_info);
+void	draw_pixel(t_map_info *map_info, int win_x, int win_y, int color);
 
 #endif
