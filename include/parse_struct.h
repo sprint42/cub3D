@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/12 22:25:44 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/12 23:56:34 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,17 @@ typedef struct t_texture
 	struct t_comp	*comp_s;
 	struct t_comp	*comp_n;
 }t_texture;
+
+typedef struct s_state
+{
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+	t_comp	img_buf;
+}	t_state;
 
 /*
 **	t_map_info

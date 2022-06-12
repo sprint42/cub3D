@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:47 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/12 22:25:50 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/12 23:48:30 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int ac, char **av)
 	malloc_info(&map_info);
 	proc_map(&map_info, av[1]);
 	proc_mlx(&map_info);
+	init_state(map_info);
+	
 	free_map(&map_info);
 	return (1);
 }

@@ -3,15 +3,12 @@
 
 # include "minilib.h"
 
-typedef struct s_state
-{
-	double	pos_x;
-	double	pos_y;
-	double	dir_x;
-	double	dir_y;
-	double	plane_x;
-	double	plane_y;
-	t_comp	img_buf;
-}	t_state
+# define winW 4096
+# define winH 2048
+# define texW 64
+# define texH 64
+
+// init_state.
+void	init_state(t_map_info *map_info);
 
 #endif
