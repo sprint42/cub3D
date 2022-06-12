@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:09:57 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 01:09:44 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 01:46:08 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define winH 2048
 # define texW 64
 # define texH 64
+# define SIDE_X 0
+# define SIDE_Y 1
 
 typedef struct	s_ray
 {
@@ -34,8 +36,8 @@ typedef struct	s_ray
 	double	diststep_y;
 	int		hit_side;
 	double	parallel_dist;
-	int		x_step_dir;
-	int		y_step_dir;
+	int		step_x;
+	int		step_y;
 }	t_ray;
 
 typedef struct s_draw
@@ -55,6 +57,7 @@ typedef struct s_draw
 void	init_window(t_map_info *map_info);
 void	init_state(t_map_info *map_info);
 void	init_ray(t_map_info *map_info, t_ray *ray);
+void	init_draw_info(t_map_info *map_info, t_ray *ray, t_draw *draw_info);
 
 /* EVENT */
 void	play(t_map_info *map_info);

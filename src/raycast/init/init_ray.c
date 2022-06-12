@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:46:30 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 01:12:43 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 02:01:23 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@ static void	init_step(t_map_info *map_info, t_ray *ray)
 	state = map_info->state;
 	if (ray->raydir_x < 0)
 	{
-		ray->x_step_dir = -1;
+		ray->step_x = -1;
 		ray->nextdist_x = (state.pos_x - ray->map_x) * ray->diststep_x;
 	}
 	else
 	{
-		ray->x_step_dir = 1;
+		ray->step_x = 1;
 		ray->nextdist_x = (ray->map_x + 1 - state.pos_x) * ray->diststep_x;
 	}
 	if (ray->raydir_y < 0)
 	{
-		ray->y_step_dir = -1;
+		ray->step_y = -1;
 		ray->nextdist_y = (state.pos_y - ray->map_y) * ray->diststep_y;
 	}
 	else
 	{
-		ray->y_step_dir = 1;
+		ray->step_y = 1;
 		ray->nextdist_y = (ray->map_y + 1 - state.pos_y) * ray->diststep_y;
 	}
 }
