@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 02:09:51 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 05:46:48 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 12:59:59 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	draw_vertical_line(t_map_info *map_info, int win_x, t_draw draw_info)
 		color = *(unsigned int *)ptr;
 		draw_pixel(map_info, win_x, win_y, color);
 		win_y++;
+		draw_info.tex_y_pos += draw_info.step;
 	}
 	while (win_y < winH)
 	{

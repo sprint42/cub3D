@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:34:19 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 05:46:08 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 12:42:39 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	find_hit_point(t_map_info *map_info, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->hit_side = SIDE_Y;
 		}
-		if (map_info->map[ray->map_y][ray->map_x] == '1')
+		if (map_info->map[ray->map_y][ray->map_x] != '1')
 			hit = 1;
 	}
 }
