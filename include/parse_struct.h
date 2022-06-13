@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/12 16:25:16 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/13 12:06:46 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ typedef struct t_color
 	unsigned int	c_b;
 	unsigned int	f_check;
 	unsigned int	c_check;
+	unsigned int	f_rgb;
+	unsigned int	c_rgb;
 }t_color;
 
 typedef struct t_map_ptr
