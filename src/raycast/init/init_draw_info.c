@@ -6,7 +6,7 @@
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 01:45:34 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 05:45:24 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 13:07:45 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	init_draw_info(t_map_info *map_info, t_ray *ray, t_draw *draw_info)
 		ray->parallel_dist = (ray->map_y - state.pos_y + (1 - ray->step_y) / 2) / ray->raydir_y;
 	ray->parallel_dist += 1e-30;
 	draw_info->drawline_height = (int)(winH / ray->parallel_dist);
-	draw_info->step = texH / draw_info->drawline_height;
+	draw_info->step = (double)texH / draw_info->drawline_height;
 	draw_info->tex_y_pos = 0;
 	draw_info->draw_start = -(draw_info->drawline_height / 2) + winH / 2;
 	if (draw_info->draw_start < 0)
