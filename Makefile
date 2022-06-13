@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yejin <yejin@student.42.fr>                +#+  +:+       +#+         #
+#    By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 14:16:54 by mcha              #+#    #+#              #
-#    Updated: 2022/06/12 23:54:59 by yejin            ###   ########.fr        #
+#    Updated: 2022/06/13 13:52:23 by mcha             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 ##																		##
 ##########################################################################
 CC			= gcc
-CFLAGS		= -I $(HEAD_ROOT) -Wall -Werror -Wextra -g#3 -fsanitize=address
+CFLAGS		= -I $(HEAD_ROOT) -Wall -Werror -Wextra -g3 -fsanitize=address
 LFLAGS		= -lmlx -framework OpenGL -framework AppKit
 
 

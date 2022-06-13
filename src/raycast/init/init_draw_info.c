@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_draw_info.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 01:45:34 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 13:07:45 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 13:42:27 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	init_draw_info(t_map_info *map_info, t_ray *ray, t_draw *draw_info)
 	if (ray->hit_side == SIDE_X)
 		ray->parallel_dist = (ray->map_x - state.pos_x + (1 - ray->step_x) / 2) / ray->raydir_x;
 	else
-		ray->parallel_dist = (ray->map_y - state.pos_y + (1 - ray->step_y) / 2) / ray->raydir_y;
+		ray->parallel_dist = (ray->map_y - state.pos_y +  (1 - ray->step_y) / 2) / ray->raydir_y;
 	ray->parallel_dist += 1e-30;
 	draw_info->drawline_height = (int)(winH / ray->parallel_dist);
 	draw_info->step = (double)texH / draw_info->drawline_height;

@@ -3,6 +3,7 @@
 "C_Cpp.errorSquiggles": "Disabled",
 "files.associations": {
 	"parse_struct.h": "c",
-	"minilib.h": "c"
+	"minilib.h": "c",
+	"raycast.h": "c"
 }
 }
