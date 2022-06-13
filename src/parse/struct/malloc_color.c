@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:42:22 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/07 15:08:04 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/13 12:01:42 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	malloc_color(t_map_info **info)
 	(*info)->color->c_b = 0;
 	(*info)->color->c_check = 0;
 	(*info)->color->f_check = 0;
+	(*info)->color->f_rgb = 0;
+	(*info)->color->c_rgb = 0;
 }
