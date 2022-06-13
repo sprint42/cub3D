@@ -1,7 +1,7 @@
-NO ./texture/NO.xpm
-SO ./texture/SO.xpm
-WE ./texture/WE.xpm
-EA ./texture/EA.xpm
+NO ./texture/TEX1.xpm
+SO ./texture/TEX2.xpm
+WE ./texture/TEX3.xpm
+EA ./texture/TEX4.xpm
 F 001,153,100
 C 255,255,255
 
