@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 02:09:51 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 12:59:59 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/13 16:16:20 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	draw_vertical_line(t_map_info *map_info, int win_x, t_draw draw_info)
 		draw_pixel(map_info, win_x, win_y, 0);
 		win_y++;
 	}
-	while (win_y <= draw_info.draw_end)
+	printf("draw_end : %d\n", draw_info.draw_end);
+	while (win_y < draw_info.draw_end)
 	{
 		tex_y = (int)(draw_info.tex_y_pos);
 		ptr = draw_info.curr_img->addr;
@@ -35,6 +36,7 @@ void	draw_vertical_line(t_map_info *map_info, int win_x, t_draw draw_info)
 		win_y++;
 		draw_info.tex_y_pos += draw_info.step;
 	}
+	printf("tile\n");
 	while (win_y < winH)
 	{
 		draw_pixel(map_info, win_x, win_y, 0);
