@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+         #
+#    By: yejin <yejin@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 14:16:54 by mcha              #+#    #+#              #
-#    Updated: 2022/06/09 16:19:51 by mcha             ###   ########.fr        #
+#    Updated: 2022/06/12 23:54:59 by yejin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ HEAD_ROOT	= include
 MLIB_ROOT	= minilibx_opengl
 PARS_ROOT	= $(SRCS_ROOT)/parse
 LIBM_ROOT	= $(SRCS_ROOT)/mlx
+RAYC_ROOT	= $(SRCS_ROOT)/raycast
 
 
 ##########################################################################
@@ -66,6 +67,9 @@ SRCS_M_PROC	= $(LIBM_ROOT)/proc
 SRCS_M_CHEK	= $(LIBM_ROOT)/check
 SRCS_M_BIND	= $(LIBM_ROOT)/bind
 SRCS_M_FREE	= $(LIBM_ROOT)/free
+SRCS_R_INIT	= $(RAYC_ROOT)/init
+SRCS_R_EVNT	= $(RAYC_ROOT)/event
+SRCS_R_DRAW	= $(RAYC_ROOT)/draw
 
 vpath %.c	$(SRCS_MAIN) \
 			$(SRCS_P_ERRO) \
@@ -79,6 +83,9 @@ vpath %.c	$(SRCS_MAIN) \
 			$(SRCS_M_CHEK) \
 			$(SRCS_M_BIND) \
 			$(SRCS_M_FREE) \
+			$(SRCS_R_INIT) \
+			$(SRCS_R_EVNT) \
+			$(SRCS_R_DRAW)
 
 
 ##########################################################################
@@ -98,6 +105,9 @@ FILE_M_PROC = $(notdir $(wildcard $(SRCS_M_PROC)/*.c))
 FILE_M_CHEK = $(notdir $(wildcard $(SRCS_M_CHEK)/*.c))
 FILE_M_BIND	= $(notdir $(wildcard $(SRCS_M_BIND)/*.c))
 FILE_M_FREE	= $(notdir $(wildcard $(SRCS_M_FREE)/*.c))
+FILE_R_INIT	= $(notdir $(wildcard $(SRCS_R_INIT)/*.c))
+FILE_R_EVNT	= $(notdir $(wildcard $(SRCS_R_EVNT)/*.c))
+FILE_R_DRAW	= $(notdir $(wildcard $(SRCS_R_DRAW)/*.c))
 
 
 ##########################################################################
@@ -117,6 +127,9 @@ OBJ_M_PROC	= $(FILE_M_PROC:.c=.o)
 OBJ_M_CHEK	= $(FILE_M_CHEK:.c=.o)
 OBJ_M_BIND	= $(FILE_M_BIND:.c=.o)
 OBJ_M_FREE	= $(FILE_M_FREE:.c=.o)
+OBJ_R_INIT	= $(FILE_R_INIT:.c=.o)
+OBJ_R_EVNT	= $(FILE_R_EVNT:.c=.o)
+OBJ_R_DRAW	= $(FILE_R_DRAW:.c=.o)
 
 
 ##########################################################################
@@ -125,8 +138,9 @@ OBJ_M_FREE	= $(FILE_M_FREE:.c=.o)
 ##																		##
 ##########################################################################
 OBJ_PARSE	:= $(OBJ_P_ERRO) $(OBJ_P_CHEK) $(OBJ_P_STRT) $(OBJ_P_FREE) $(OBJ_P_PROC) $(OBJ_P_GETN) $(OBJ_P_BIND)
+OBJ_RAYC	:= $(OBJ_R_INIT) $(OBJ_R_EVNT) $(OBJ_R_DRAW)
 OBJ_MLX		:= $(OBJ_M_PROC) $(OBJ_M_CHEK) $(OBJ_M_BIND) $(OBJ_M_FREE)
-OBJ 		:= $(OBJ_MAIN) $(OBJ_PARSE) $(OBJ_MLX)
+OBJ 		:= $(OBJ_MAIN) $(OBJ_PARSE) $(OBJ_RAYC) $(OBJ_MLX)
 OBJ 		:= $(addprefix $(OBJS_ROOT)/, $(OBJ))
 
 

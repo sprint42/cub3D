@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   play.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:33:50 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/12 23:48:28 by yejin            ###   ########.fr       */
+/*   Created: 2022/06/13 00:34:16 by yejin             #+#    #+#             */
+/*   Updated: 2022/06/13 04:24:29 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
+#include "raycast.h"
 
-static void	free_map_element(t_map_info **info)
+void	play(t_map_info *map_info)
 {
-	if (info && (*info)->wspace)
-		free_info_wspace((*info)->wspace);
-	if (info && (*info)->path)
-		free_info_texture((*info)->path);
-}
-
-void	free_map(t_map_info **info)
-{
-	if (*info)
-	{
-		free_map_element(info);
-		free(*info);
-		*info = NULL;
-	}
+	draw_sight(map_info);
+	mlx_hook(map_info->win_ptr, EVENT_KEY_PRESS, 0, press_key, map_info);
+	mlx_loop(map_info->mlx_ptr);
 }

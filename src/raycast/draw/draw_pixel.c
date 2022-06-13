@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   draw_pixel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:33:50 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/12 23:48:28 by yejin            ###   ########.fr       */
+/*   Created: 2022/06/13 02:12:04 by yejin             #+#    #+#             */
+/*   Updated: 2022/06/13 03:58:55 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
+# include "raycast.h"
 
-static void	free_map_element(t_map_info **info)
+void	draw_pixel(t_map_info *map_info, int win_x, int win_y, int color)
 {
-	if (info && (*info)->wspace)
-		free_info_wspace((*info)->wspace);
-	if (info && (*info)->path)
-		free_info_texture((*info)->path);
-}
+	char	*pixel_ptr;
 
-void	free_map(t_map_info **info)
-{
-	if (*info)
-	{
-		free_map_element(info);
-		free(*info);
-		*info = NULL;
-	}
+	pixel_ptr = map_info->state.img_buf.addr;
+	pixel_ptr += win_y * map_info->state.img_buf.size_line;
+	pixel_ptr += win_x * (map_info->state.img_buf.bpp / 8);
+	*(unsigned int *)pixel_ptr = color;
 }

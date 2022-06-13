@@ -6,7 +6,7 @@
 /*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/13 12:06:46 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/13 12:09:31 by mcha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,21 +112,16 @@ typedef struct t_texture
 	struct t_comp	*comp_n;
 }t_texture;
 
-/*
-**	t_map_info
-**	int					width;		= 맵의 width
-**	int					height;		= 맵의 height
-**	int					flag;		= 파싱 시 체크리스트 확인을 위한 비트마스킹 변수
-**	char				*wspace;	= whitespace 배열
-**	char				*valid;		= 맵에 포함 될 수 있는 문자 배열
-**	struct t_texture	*path;		= texture path가 들어있는 구조체
-**	struct t_color		*color;		= 천장 및 바닥 RGB 요소가 들어있는 구조체
-**	struct t_map_ptr	*ptr;		= xpm_file_to_image의 결과인 방위 별 정보가 들어있는 구조체
-**	struct t_texture	*texture;	= 방위별 포인터, mlx_get_data_addr의 결과가 들어있는 구조체
-**	char				**map;		= 이차원 배열로 되어있는 맵 정보
-**	void				*mlx_ptr;	= mlx_init() 의 결과
-**	void				*win_ptr;	= 윈도우 포인터
-*/
+typedef struct s_state
+{
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+	t_comp	img_buf;
+}	t_state;
 
 typedef struct t_map_info
 {
@@ -142,6 +137,7 @@ typedef struct t_map_info
 	char					**map;
 	void					*mlx_ptr;
 	void					*win_ptr;
-}t_map_info;
+	t_state					state;
+}	t_map_info;
 
 #endif
