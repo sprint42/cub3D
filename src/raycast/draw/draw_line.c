@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 02:09:51 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 16:16:20 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/13 22:41:36 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	draw_vertical_line(t_map_info *map_info, int win_x, t_draw draw_info)
 	{
 		tex_y = (int)(draw_info.tex_y_pos);
 		ptr = draw_info.curr_img->addr;
+		// printf("%d\n", draw_info.tex_x);
+		// printf("%d\n", tex_y * draw_info.curr_img->size_line + draw_info.tex_x * (draw_info.curr_img->bpp / 8));
 		ptr += tex_y * draw_info.curr_img->size_line + draw_info.tex_x * (draw_info.curr_img->bpp / 8);
 		color = *(unsigned int *)ptr;
 		draw_pixel(map_info, win_x, win_y, color);
