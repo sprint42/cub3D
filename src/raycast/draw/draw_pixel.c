@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   malloc_texture.c                                   :+:      :+:    :+:   */
+/*   draw_pixel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:52:48 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/13 02:40:30 by yejin            ###   ########.fr       */
+/*   Created: 2022/06/13 02:12:04 by yejin             #+#    #+#             */
+/*   Updated: 2022/06/13 03:58:55 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
+# include "raycast.h"
 
-void	malloc_texture(t_map_info **info)
+void	draw_pixel(t_map_info *map_info, int win_x, int win_y, int color)
 {
-	(*info)->path = (t_texture_path *)malloc(sizeof(t_texture_path));
-	if (!((*info)->path))
-	{
-		error_print(ERROR_MAL);
-		exit(EXIT_FAILURE);
-	}
-	(*info)->path->path_e = NULL;
-	(*info)->path->path_w = NULL;
-	(*info)->path->path_s = NULL;
-	(*info)->path->path_n = NULL;
+	char	*pixel_ptr;
+
+	pixel_ptr = map_info->state.img_buf.addr;
+	pixel_ptr += win_y * map_info->state.img_buf.size_line;
+	pixel_ptr += win_x * (map_info->state.img_buf.bpp / 8);
+	*(unsigned int *)pixel_ptr = color;
 }

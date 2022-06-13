@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:45:26 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/12 16:25:16 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/12 23:56:34 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,17 @@ typedef struct t_texture
 	struct t_comp	*comp_n;
 }t_texture;
 
+typedef struct s_state
+{
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+	t_comp	img_buf;
+}	t_state;
+
 /*
 **	t_map_info
 **	int					width;		= 맵의 width
@@ -140,6 +151,7 @@ typedef struct t_map_info
 	char					**map;
 	void					*mlx_ptr;
 	void					*win_ptr;
-}t_map_info;
+	t_state					state;
+}	t_map_info;
 
 #endif

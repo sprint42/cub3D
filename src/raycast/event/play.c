@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   malloc_texture.c                                   :+:      :+:    :+:   */
+/*   play.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:52:48 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/13 02:40:30 by yejin            ###   ########.fr       */
+/*   Created: 2022/06/13 00:34:16 by yejin             #+#    #+#             */
+/*   Updated: 2022/06/13 04:24:29 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
+#include "raycast.h"
 
-void	malloc_texture(t_map_info **info)
+void	play(t_map_info *map_info)
 {
-	(*info)->path = (t_texture_path *)malloc(sizeof(t_texture_path));
-	if (!((*info)->path))
-	{
-		error_print(ERROR_MAL);
-		exit(EXIT_FAILURE);
-	}
-	(*info)->path->path_e = NULL;
-	(*info)->path->path_w = NULL;
-	(*info)->path->path_s = NULL;
-	(*info)->path->path_n = NULL;
+	draw_sight(map_info);
+	mlx_hook(map_info->win_ptr, EVENT_KEY_PRESS, 0, press_key, map_info);
+	mlx_loop(map_info->mlx_ptr);
 }
