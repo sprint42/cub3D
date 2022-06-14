@@ -6,13 +6,13 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 04:25:49 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 16:03:03 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 13:45:07 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycast.h"
 
-static void	rotate_left(t_map_info *map_info)
+void	rotate_left(t_map_info *map_info)
 {
 	double	curr_dir_x;
 	double	curr_dir_y;
@@ -29,7 +29,7 @@ static void	rotate_left(t_map_info *map_info)
 	map_info->state.plane_y = curr_plane_y * cos(THETA) - curr_plane_x * sin(THETA);
 }
 
-static void	rotate_right(t_map_info *map_info)
+void	rotate_right(t_map_info *map_info)
 {
 	double	curr_dir_x;
 	double	curr_dir_y;
@@ -44,12 +44,4 @@ static void	rotate_right(t_map_info *map_info)
 	curr_plane_y = map_info->state.plane_y;
 	map_info->state.plane_x = curr_plane_x * cos(THETA) - curr_plane_y * sin(THETA);
 	map_info->state.plane_y = curr_plane_y * cos(THETA) + curr_plane_x * sin(THETA);
-}
-
-void	event_rotate(int key, t_map_info *map_info)
-{
-	if (key == KEY_LA)
-		rotate_left(map_info);
-	else
-		rotate_right(map_info);
 }

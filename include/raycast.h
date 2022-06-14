@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:09:57 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 12:09:08 by mcha             ###   ########.fr       */
+/*   Updated: 2022/06/14 19:16:31 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # define KEY_RA 124
 # define KEY_ESC 53
 
-# define SPEED 0.5
+# define SPEED 0.4
 # define THETA 2 * M_PI / 180
 
 typedef struct	s_ray
@@ -77,7 +77,13 @@ void	init_draw_info(t_map_info *map_info, t_ray *ray, t_draw *draw_info);
 void	play(t_map_info *map_info);
 int		press_key(int key, t_map_info *map_info);
 void	event_move(int key, t_map_info *map_info);
+void	move_to_north(t_map_info *map_info);
+void	move_to_south(t_map_info *map_info);
+void	move_to_west(t_map_info *map_info);
+void	move_to_east(t_map_info *map_info);
 void	event_rotate(int key, t_map_info *map_info);
+void	rotate_left(t_map_info *map_info);
+void	rotate_right(t_map_info *map_info);
 void	event_red_cross(t_map_info *map_info);
 
 /* DRAW */
