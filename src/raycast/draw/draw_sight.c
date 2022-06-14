@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:34:19 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 16:14:40 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 12:05:40 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,10 @@ void	draw_sight(t_map_info *map_info)
 	i = 0;
 	while (i < winW)
 	{
-		// printf("%d\n", i);
 		ray.camera_pos = 2 * i / (double)winW - 1;
-		init_ray(map_info, &ray);
-		printf("init ray\n");
 		find_hit_point(map_info, &ray);
-		printf("find hit\n");
 		init_draw_info(map_info, &ray, &draw_info);
-		printf("draw info\n");
 		draw_vertical_line(map_info, i, draw_info);
-		printf("draw\n");
 		i++;
 	}
 	mlx_put_image_to_window(map_info->mlx_ptr, map_info->win_ptr, map_info->state.img_buf.ptr, 0, 0);

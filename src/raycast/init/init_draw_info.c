@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 01:45:34 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 22:41:15 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 12:05:07 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,10 @@ static void	init_texture_index(t_map_info *map_info, t_ray *ray, t_draw *draw_in
 	t_state state;
 
 	state = map_info->state;
-	if (ray->hit_side == SIDE_X && ray->raydir_y >= 0)
+	if (ray->hit_side == SIDE_X)
 		draw_info->wall_x = state.pos_y + ray->parallel_dist * ray->raydir_y;
-	else if (ray->hit_side == SIDE_X)
-		draw_info->wall_x = state.pos_y - ray->parallel_dist * ray->raydir_y;
-	else if (ray->hit_side == SIDE_Y && ray->raydir_x >= 0)
-		draw_info->wall_x = state.pos_x + ray->parallel_dist * ray->raydir_x;
 	else if (ray->hit_side == SIDE_Y)
-		draw_info->wall_x = state.pos_x - ray->parallel_dist * ray->raydir_x;
+		draw_info->wall_x = state.pos_x + ray->parallel_dist * ray->raydir_x;
 	draw_info->wall_x -= (int)(draw_info->wall_x);
 	draw_info->tex_x = draw_info->wall_x * texW;
 }
