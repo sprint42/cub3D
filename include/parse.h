@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:58 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/14 13:10:24 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 19:38:30 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	free_info_texture_path(t_map_info *info);
 void	free_info_color(t_map_info *info);
 void	free_texture_ptr(t_map_info *info);
 void	free_texture(t_map_info *info);
-void	free_comp(t_map_info *info, t_comp *comp);
 
 /*
 **	Error
