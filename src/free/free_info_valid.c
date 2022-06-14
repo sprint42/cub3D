@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_info_texture.c                                :+:      :+:    :+:   */
+/*   free_info_valid.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcha <mcha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 19:36:44 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/12 16:19:42 by mcha             ###   ########.fr       */
+/*   Created: 2022/06/14 12:27:54 by yejikim           #+#    #+#             */
+/*   Updated: 2022/06/14 13:09:05 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-void	free_info_texture(t_texture_path *path)
+void	free_info_valid(t_map_info *info)
 {
-	free(path->path_e);
-	free(path->path_w);
-	free(path->path_s);
-	free(path->path_n);
-	path->path_e = NULL;
-	path->path_w = NULL;
-	path->path_s = NULL;
-	path->path_n = NULL;
-	free(path);
-	path = NULL;
+	if (info == NULL)
+		return ;
+	if (info->valid)
+		free(info->valid);
+	info->valid = NULL;
 }
