@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:09:57 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/14 19:16:31 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 19:41:27 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	move_to_east(t_map_info *map_info);
 void	event_rotate(int key, t_map_info *map_info);
 void	rotate_left(t_map_info *map_info);
 void	rotate_right(t_map_info *map_info);
-void	event_red_cross(t_map_info *map_info);
+int		event_red_cross(t_map_info *map_info);
 
 /* DRAW */
 void	draw_sight(t_map_info *map_info);

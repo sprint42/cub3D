@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:33:50 by mcha              #+#    #+#             */
-/*   Updated: 2022/06/14 13:18:30 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 19:38:59 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ static void	free_map_element(t_map_info *info)
 		free_db_arr(info->map);
 	info->map = NULL;
 	mlx_destroy_window(info->mlx_ptr, info->win_ptr);
-	free(info->win_ptr);
 	free(info->mlx_ptr);
-	if (&(info->state.img_buf))
-		free_comp(info, &(info->state.img_buf));
 }
 
 void	free_map(t_map_info **info)
