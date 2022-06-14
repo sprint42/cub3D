@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_sight.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:34:19 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 12:42:39 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/14 12:11:58 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	find_hit_point(t_map_info *map_info, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->hit_side = SIDE_Y;
 		}
-		if (map_info->map[ray->map_y][ray->map_x] != '1')
+		if (map_info->map[ray->map_y][ray->map_x] != '0')
 			hit = 1;
 	}
 }
@@ -47,7 +47,6 @@ void	draw_sight(t_map_info *map_info)
 	while (i < winW)
 	{
 		ray.camera_pos = 2 * i / (double)winW - 1;
-		init_ray(map_info, &ray);
 		find_hit_point(map_info, &ray);
 		init_draw_info(map_info, &ray, &draw_info);
 		draw_vertical_line(map_info, i, draw_info);
