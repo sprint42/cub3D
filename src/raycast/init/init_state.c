@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_state.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:10:13 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 03:41:37 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/14 20:28:46 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ static void	init_position(t_map_info *map_info, int (*i), int *j)
 		(*j) = 0;
 		while ((*j) < map_info->width)
 		{
-			if (map_info->map[(*i)][(*j)] == 'N' || map_info->map[(*i)][(*j)] == 'S' || map_info->map[(*i)][(*j)] == 'W' || map_info->map[(*i)][(*j)] == 'E')
+			if (map_info->map[(*i)][(*j)] == 'N' || \
+				map_info->map[(*i)][(*j)] == 'S' || \
+				map_info->map[(*i)][(*j)] == 'W' || \
+				map_info->map[(*i)][(*j)] == 'E')
 			{
 				map_info->state.pos_x = (*j);
 				map_info->state.pos_y = (*i);

@@ -6,11 +6,11 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 02:12:04 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/14 12:06:03 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 20:28:01 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "raycast.h"
+#include "raycast.h"
 
 void	draw_pixel(t_map_info *map_info, int win_x, int win_y, int color)
 {

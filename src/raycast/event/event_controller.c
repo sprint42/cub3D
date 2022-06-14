@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:44:20 by yejikim           #+#    #+#             */
-/*   Updated: 2022/06/14 13:44:58 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 20:33:34 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	event_move(int key, t_map_info *map_info)
 		move_to_north(map_info);
 	else if (key == KEY_S)
 		move_to_south(map_info);
-	else if(key == KEY_A)
+	else if (key == KEY_A)
 		move_to_west(map_info);
 	else
 		move_to_east(map_info);
