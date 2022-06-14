@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 04:15:50 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/14 19:26:44 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 20:39:00 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static void	check_pos_range(t_map_info *map_info)
 void	move_to_north(t_map_info *map_info)
 {
 	t_state	state;
-	double dx;
-	double dy;
+	double	dx;
+	double	dy;
 	double	origin_x;
 	double	origin_y;
 
@@ -40,8 +40,9 @@ void	move_to_north(t_map_info *map_info)
 	map_info->state.pos_x += dx * SPEED;
 	map_info->state.pos_y += dy * SPEED;
 	check_pos_range(map_info);
-	if (map_info->map[(int)map_info->state.pos_y][(int)map_info->state.pos_x] != '0' ||
-		map_info->map[(int)(map_info->state.pos_y + dy * SPEED)][(int)(map_info->state.pos_x + dx * SPEED)] != '0')
+	if (map_info->map[(int)state.pos_y][(int)state.pos_x] != '0' || \
+		map_info->map[(int)(state.pos_y + dy * SPEED)] \
+					[(int)(state.pos_x + dx * SPEED)] != '0')
 	{
 		map_info->state.pos_x = origin_x;
 		map_info->state.pos_y = origin_y;
@@ -51,8 +52,8 @@ void	move_to_north(t_map_info *map_info)
 void	move_to_south(t_map_info *map_info)
 {
 	t_state	state;
-	double dx;
-	double dy;
+	double	dx;
+	double	dy;
 	double	origin_x;
 	double	origin_y;
 
@@ -64,8 +65,9 @@ void	move_to_south(t_map_info *map_info)
 	map_info->state.pos_x -= dx * SPEED;
 	map_info->state.pos_y -= dy * SPEED;
 	check_pos_range(map_info);
-	if (map_info->map[(int)map_info->state.pos_y][(int)map_info->state.pos_x] != '0' ||
-		map_info->map[(int)(map_info->state.pos_y + dy * SPEED)][(int)(map_info->state.pos_x + dx * SPEED)] != '0')
+	if (map_info->map[(int)state.pos_y][(int)state.pos_x] != '0' || \
+		map_info->map[(int)(state.pos_y + dy * SPEED)] \
+					[(int)(state.pos_x + dx * SPEED)] != '0')
 	{
 		map_info->state.pos_x = origin_x;
 		map_info->state.pos_y = origin_y;
@@ -75,8 +77,8 @@ void	move_to_south(t_map_info *map_info)
 void	move_to_west(t_map_info *map_info)
 {
 	t_state	state;
-	double dx;
-	double dy;
+	double	dx;
+	double	dy;
 	double	origin_x;
 	double	origin_y;
 
@@ -88,8 +90,9 @@ void	move_to_west(t_map_info *map_info)
 	map_info->state.pos_x += dx * SPEED;
 	map_info->state.pos_y += dy * SPEED;
 	check_pos_range(map_info);
-	if (map_info->map[(int)map_info->state.pos_y][(int)map_info->state.pos_x] != '0' ||
-		map_info->map[(int)(map_info->state.pos_y + dy * SPEED)][(int)(map_info->state.pos_x + dx * SPEED)] != '0')
+	if (map_info->map[(int)state.pos_y][(int)state.pos_x] != '0' || \
+		map_info->map[(int)(state.pos_y + dy * SPEED)] \
+					[(int)(state.pos_x + dx * SPEED)] != '0')
 	{
 		map_info->state.pos_x = origin_x;
 		map_info->state.pos_y = origin_y;
@@ -99,8 +102,8 @@ void	move_to_west(t_map_info *map_info)
 void	move_to_east(t_map_info *map_info)
 {
 	t_state	state;
-	double dx;
-	double dy;
+	double	dx;
+	double	dy;
 	double	origin_x;
 	double	origin_y;
 
@@ -112,8 +115,9 @@ void	move_to_east(t_map_info *map_info)
 	map_info->state.pos_x += dx * SPEED;
 	map_info->state.pos_y += dy * SPEED;
 	check_pos_range(map_info);
-	if (map_info->map[(int)map_info->state.pos_y][(int)map_info->state.pos_x] != '0' ||
-		map_info->map[(int)(map_info->state.pos_y + dy * SPEED)][(int)(map_info->state.pos_x + dx * SPEED)] != '0')
+	if (map_info->map[(int)state.pos_y][(int)state.pos_x] != '0' || \
+		map_info->map[(int)(state.pos_y + dy * SPEED)] \
+					[(int)(state.pos_x + dx * SPEED)] != '0')
 	{
 		map_info->state.pos_x = origin_x;
 		map_info->state.pos_y = origin_y;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_ray.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:46:30 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/13 03:40:54 by yejin            ###   ########.fr       */
+/*   Updated: 2022/06/14 20:31:51 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	init_step(t_map_info *map_info, t_ray *ray)
 {
-	t_state state;
+	t_state	state;
 
 	state = map_info->state;
 	if (ray->raydir_x < 0)
@@ -41,7 +41,7 @@ static void	init_step(t_map_info *map_info, t_ray *ray)
 
 void	init_ray(t_map_info *map_info, t_ray *ray)
 {
-	t_state state;
+	t_state	state;
 
 	state = map_info->state;
 	ray->raydir_x = state.dir_x + state.plane_x * ray->camera_pos;

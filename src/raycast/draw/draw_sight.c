@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:34:19 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/14 13:33:55 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 20:27:46 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static void	find_hit_point(t_map_info *map_info, t_ray *ray)
 	}
 }
 
-
 void	draw_sight(t_map_info *map_info)
 {
 	int		i;
@@ -44,14 +43,15 @@ void	draw_sight(t_map_info *map_info)
 	t_draw	draw_info;
 
 	i = 0;
-	while (i < winW)
+	while (i < WIN_W)
 	{
-		ray.camera_pos = 2 * i / (double)winW - 1;
+		ray.camera_pos = 2 * i / (double)WIN_W - 1;
 		init_ray(map_info, &ray);
 		find_hit_point(map_info, &ray);
 		init_draw_info(map_info, &ray, &draw_info);
 		draw_vertical_line(map_info, i, draw_info);
 		i++;
 	}
-	mlx_put_image_to_window(map_info->mlx_ptr, map_info->win_ptr, map_info->state.img_buf.ptr, 0, 0);
+	mlx_put_image_to_window(map_info->mlx_ptr, map_info->win_ptr, \
+							map_info->state.img_buf.ptr, 0, 0);
 }
