@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 02:09:51 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/14 12:05:55 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 12:22:39 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	draw_vertical_line(t_map_info *map_info, int win_x, t_draw draw_info)
 	win_y = 0;
 	while (win_y < draw_info.draw_start)
 	{
-		draw_pixel(map_info, win_x, win_y, 0);
+		draw_pixel(map_info, win_x, win_y, map_info->color->c_rgb);
 		win_y++;
 	}
 	while (win_y < draw_info.draw_end)
@@ -37,7 +37,7 @@ void	draw_vertical_line(t_map_info *map_info, int win_x, t_draw draw_info)
 	}
 	while (win_y < winH)
 	{
-		draw_pixel(map_info, win_x, win_y, 0);
+		draw_pixel(map_info, win_x, win_y, map_info->color->f_rgb);
 		win_y++;
 	}
 }
