@@ -6,7 +6,7 @@
 /*   By: yejikim <yejikim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:09:57 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/14 20:41:50 by yejikim          ###   ########.fr       */
+/*   Updated: 2022/06/14 21:34:31 by yejikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 # define SIDE_X 0
 # define SIDE_Y 1
-# define SPEED 0.4
+# define SPEED 0.33
 # define THETA 0.03
 
 /* INIT */
