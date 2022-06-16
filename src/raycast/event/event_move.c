@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejin <yejin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 04:015:50 by yejin             #+#    #+#             */
-/*   Updated: 2022/06/16 10:17:05 by yejin            ###   ########.fr       */
+/*   Created: 2022/06/13 04:01:05 by  yejin            #+#    #+#             */
+/*   Updated: 2022/06/16 10:23:26 by yejin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int	check_pos_range(t_map_info *map_info, double diff_x, double diff_y)
 
 	map_x = (int)map_info->state.pos_x;
 	map_y = (int)map_info->state.pos_y;
-	printf("%f, %f\n", diff_x, diff_y);
 	if (diff_x < 0.015 && diff_y < 0.015)
 	{
 		if (map_info->map[map_y - 1][map_x - 1] != '0' || \
@@ -65,7 +64,6 @@ void	move_to_north(t_map_info *map_info, double dx, double dy)
 	{
 		map_info->state.pos_x = origin_x;
 		map_info->state.pos_y = origin_y;
-		
 	}
 }
 
