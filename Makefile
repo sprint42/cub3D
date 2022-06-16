@@ -6,7 +6,7 @@
 #    By: mcha <mcha@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 14:16:54 by mcha              #+#    #+#              #
-#    Updated: 2022/06/14 12:11:43 by mcha             ###   ########.fr        #
+#    Updated: 2022/06/16 13:27:45 by mcha             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 ##																		##
 ##########################################################################
 CC			= gcc
-CFLAGS		= -I $(HEAD_ROOT) -Wall -Werror -Wextra -g3 -fsanitize=address
+CFLAGS		= -I $(HEAD_ROOT) -Wall -Werror -Wextra -g#3 -fsanitize=address
 LFLAGS		= -lmlx -framework OpenGL -framework AppKit
 
 
